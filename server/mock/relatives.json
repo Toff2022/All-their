@@ -1,0 +1,140 @@
+[
+    {
+        "_id": "67rdca3eeb7f6fgeed471815",
+        "lastName": "Пешехонов",
+        "firstName": "Антон",
+        "patronymic": "Васильевич",
+        "profession": [
+            "engineer",
+            "programmer",
+            "driver"
+        ],
+        "age": 34,
+        "alive": true,
+        "genus": [
+            "Peshekhonovy"
+        ],
+        "birthDay": "03.10.1987",
+        "adress": {
+            "city": "Novokubansk",
+            "street": "Moskovskaya"
+        },
+        "sex": "male",
+        "bookmark": false
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471816",
+        "lastName": "Пешехонова",
+        "firstName": "Ольга",
+        "patronymic": "Евгеньевна",
+        "profession": [
+            "seamstress",
+            "driver"
+        ],
+        "age": 39,
+        "alive": true,
+        "lastNameBeforeMarriage": "Акиндинова",
+        "genus": [
+            "Peshekhonovy",
+            "Akindinovy"
+        ],
+        "birthDay": "11.10.1983",
+        "adress": {
+            "city": "Novokubansk",
+            "street": "Moskovskaya"
+        },
+        "sex": "female",
+        "bookmark": false
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471817",
+        "lastName": "Пешехонова",
+        "firstName": "Лада",
+        "patronymic": "Антоновна",
+        "profession": [
+            "preschoolChild"
+        ],
+        "age": 6,
+        "alive": true,
+        "lastNameBeforeMarriage": "Пешехонова",
+        "genus": [
+            "Peshekhonovy"
+        ],
+        "birthDay": "29.06.2016",
+        "adress": {
+            "city": "Novokubansk",
+            "street": "Moskovskaya"
+        },
+        "sex": "female",
+        "bookmark": false
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471818",
+        "lastName": "Пешехонов",
+        "firstName": "Василий",
+        "patronymic": "Иванович",
+        "profession": [
+            "welder",
+            "driver"
+        ],
+        "age": 69,
+        "alive": true,
+        "genus": [
+            "Peshekhonovy"
+        ],
+        "birthDay": "12.02.1953",
+        "adress": {
+            "city": "Novokubansk",
+            "street": "Octyabrskaya"
+        },
+        "sex": "male",
+        "bookmark": false
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471819",
+        "lastName": "Пешехонова",
+        "firstName": "Валентина",
+        "patronymic": "Дмитриевна",
+        "profession": [
+            "taxingInspector"
+        ],
+        "age": 69,
+        "alive": true,
+        "lastNameBeforeMarriage": "Кадочникова",
+        "genus": [
+            "Peshekhonovy",
+            "Kadochnikovy"
+        ],
+        "birthDay": "25.10.1953",
+        "adress": {
+            "city": "Novokubansk",
+            "street": "Octyabrskaya"
+        },
+        "sex": "female",
+        "bookmark": false
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471820",
+        "lastName": "Колос",
+        "firstName": "Людмила",
+        "patronymic": "Васильевна",
+        "profession": [
+            "homeMaker",
+            "driver"
+        ],
+        "age": 41,
+        "alive": true,
+        "lastNameBeforeMarriage": "Пешехонова",
+        "genus": [
+            "Peshekhonovy",
+            "Kolos"
+        ],
+        "birthDay": "25.09.1976",
+        "adress": {
+            "city": "Novokubansk",
+            "street": "Sportivnaya"
+        },
+        "sex": "female",
+        "bookmark": false
+    }
+]

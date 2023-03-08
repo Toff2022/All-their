@@ -1,0 +1,54 @@
+[
+    {
+        "_id": "67rdca3eeb7f6fgeed471000",
+        "name": "Доктор"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471001",
+        "name": "Швея"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471002",
+        "name": "Сварщик"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471003",
+        "name": "Инженер"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471004",
+        "name": "Дошкольник"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471005",
+        "name": "Школьник"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471006",
+        "name": "Домохозяйка"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471007",
+        "name": "Налоговый инспектор"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed4710008",
+        "name": "Электромонтер"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471009",
+        "name": "Военный"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471010",
+        "name": "Водитель"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471011",
+        "name": "Сапожник"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471012",
+        "name": "Сельхоз Работник"
+    }
+]
