@@ -3,6 +3,7 @@ const router = express.Router({ mergeParams: true })
 // const path = require("path")
 
 router.use("/auth", require("./auth.routes"))
+router.use("/relatives", require("./relatives.routes"))
 router.use("/blog", require("./blog.routers"))
 router.use("/genus", require("./genus.routes"))
 router.use("/profession", require("./profession.routes"))

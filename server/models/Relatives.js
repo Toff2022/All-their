@@ -17,22 +17,22 @@ const schema = new Schema({
         type: Schema.Types.ObjectId, ref: "Profession",
         required: true
     }],
-    age: {
-        type: Number,
-        required: true
-    },
+    // age: {
+    //     type: Number,
+    //     required: true
+    // },
     alive: {
         type: Boolean,
-        required: true
+        required: true,
     },
     genus: {
         type: Schema.Types.ObjectId, ref: "Genus",
         required: true
     },
-    birthDay: {
-        type: String,
-        required: true
-    },
+    // birthDay: {
+    //     type: String,
+    //     required: true
+    // },
     adress: {
         type: Object,
         required: true

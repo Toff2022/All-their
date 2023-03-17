@@ -21,18 +21,12 @@ const schema = new Schema({
         type: String,
         required: true
     },
-    birthYear: {
-        type: Number,
-        required: true
-    },
+    birthYear: Number,
     image: {
         type: String,
         required: true
     },
-    age: {
-        type: Number,
-        required: true
-    },
+    age: Number,
     sex: {
         type: String,
         required: true,
@@ -48,7 +42,7 @@ const schema = new Schema({
     genus: [{
         type: Schema.Types.ObjectId, ref: "Genus",
         required: true
-    }],
+    }]
 }, {
     timestamps: true
 })

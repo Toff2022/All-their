@@ -1,27 +1,32 @@
 const jwt = require("jsonwebtoken")
 const config = require("config")
 const Token = require("../models/Token")
+const chalk = require("chalk")
 
 class TokenService {
     //return accessToken, refreshToken, expiresIn
     // payload - объект, к-й мы передаём в genrate из fronta(в нем _id = _id вновь созданного польз-ля) 
     generate (payload) {
+        // console.log(chalk.grey('payload', payload))
+
         const accessToken = jwt.sign(payload, config.get("accessSecret"), {
             expiresIn: "1h"
         })
+
         const refreshToken = jwt.sign(payload, config.get("refreshSecret"))
-        return { accessToken, refreshToken, expiresIn: 3600 }
+        return { accessToken, refreshToken, expiresIn: 3600, }
     }
 
-    async save (userId, refreshToken) {
-        const data = await Token.findOne({ user: userId })
+    async save (user, refreshToken) {
+        const data = await Token.findOne({ user })
         if (data) {
             data.refreshToken = refreshToken
             return data.save()
         }
-        const token = await Token.create({ user: userId, refreshToken })
+        const token = await Token.create({ user, refreshToken })
         return token
     }
+
 }
 
 module.exports = new TokenService()
