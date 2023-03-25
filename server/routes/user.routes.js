@@ -4,11 +4,11 @@ const User = require("../models/User")
 const auth = require("../middleware/auth.middleware")
 const chalk = require("chalk")
 
-router.patch("/:userId", async (req, res) => {
+router.patch("/:userId", auth, async (req, res) => {
     try {
         const { userId } = req.params
         // todo: userId === current userId
-        if (userId) {
+        if (userId === req.user._id) {
             const updateUser = await User.findByIdAndUpdate(userId, req.body, { new: true })
             res.send(updateUser)
         } else {
@@ -22,7 +22,7 @@ router.patch("/:userId", async (req, res) => {
     }
 })
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
     try {
         const user = await User.find()
         res.status(200).send(user)
@@ -32,7 +32,6 @@ router.get("/", async (req, res) => {
             messge: "На сервере user произошла ошибка. Попробуйте позже!"
         })
     }
-
 })
 
 module.exports = router
