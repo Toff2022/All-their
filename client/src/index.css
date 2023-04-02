@@ -5,6 +5,14 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    /* background-image: url("../images/d9.jpg"); */
+    /* background-size: no-repeat; */
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* height: 400px;
+
+    width: 400px; */
 }
 
 code {

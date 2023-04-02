@@ -6,10 +6,10 @@ import BreadCrumbs from "../components/ui/breadCrumbs";
 const NavBar = () => {
 
     const [menuItems, setMenuItems] = useState([
-        { id: "main", text: "Главная", active: true, }, //добавляем пункт active
-        { id: "blog", text: "Блог", active: false, },
-        { id: "login", text: "Логин", active: false, },
-        { id: "familyTree", text: "Семейное Древо", active: false, },
+        { id: "main", text: "Главная", to: "/", active: true, }, //добавляем пункт active
+        { id: "blog", text: "Блог", to: "/blogPage", active: false, },
+        { id: "login", text: "Логин", to: "/loginPage", active: false, },
+        { id: "familyTree", text: "Семейное Древо", to: "/familyTree", active: false, },
     ])
 
     const currentActivePage = menuItems.find((item) => item.active) //возвращает эл-т, у к-го active=true
@@ -36,12 +36,12 @@ const NavBar = () => {
     }
 
     return (
-        <main className="d-flex flex-nowrap" style={{ height: "100vh" }}>
+        // flex-nowrap
+        <main className="d-flex inline-block" style={{ height: "30vh" }}>
             <div
-                className="d-flex flex-column flex-shrink-0 p-3 bg-light"
-                style={{ width: "280px" }}
+                className="d-flex inline-block flex-shrink-0 p-3 bg-light"
+                style={{ width: "20vh" }}
             >
-
                 <hr />
 
                 <NavLink

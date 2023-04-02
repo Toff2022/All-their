@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 const NavRouts = (props) => {
 
@@ -11,9 +12,15 @@ const NavRouts = (props) => {
         return (classes += props.active ? " active" : "")
     }
     return (
-        <div>
+        <div className="nav-item ">
             <li className={getClasses()} onClick={handleClick}>
-                <a href={props.link}>{props.text}</a>
+                {/* <a href={props.link}>{props.text}</a> */}
+                <Link
+                    aria-current="page"
+                    to={props.to}
+                >
+                    {props.text}
+                </Link>
             </li>
         </div>
     )
