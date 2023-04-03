@@ -31,12 +31,15 @@ export const genus = {
     }
 };
 
-const fetchAll = () =>
-    new Promise((resolve) => {
-        window.setTimeout(function () {
-            resolve(genus);
-        }, 2000);
-    });
-export default {
-    fetchAll
-};
+// const fetchAll = () =>
+//     new Promise((resolve) => {
+//         window.setTimeout(function () {
+//             resolve(genus);
+//         }, 2000);
+//     });
+// export default {
+//     fetchAll
+// };
+export function fetchAll () {
+    return genus
+}
