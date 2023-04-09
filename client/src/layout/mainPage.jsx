@@ -3,17 +3,14 @@ import React from "react";
 
 const MainPage = () => {
 
-
-
     return (
 
         <div className="main-container" >
-            {/* <img src="d9.jpg" alt="Great Oack" /> */}
+            <img src="d9.jpg" alt="Great Oack" />
 
             <h1>MainPage Hello!</h1>
 
         </div>
-
     )
 };
 

@@ -5,6 +5,7 @@ import MainPage from "../layout/mainPage";
 import LoginPage from "../layout/loginPage";
 import FamilyTree from "../layout/familyTree";
 import BlogPage from "../layout/blogPage";
+import PhotoAlbum from "../layout/photoAlbum";
 
 function App () {
     return (
@@ -14,6 +15,7 @@ function App () {
                 <Route path="/" exact component={MainPage} />
                 <Route path="/blogPage" component={BlogPage} />
                 <Route path="/familyTree" component={FamilyTree} />
+                <Route path="/photoAlbum" component={PhotoAlbum} />
                 <Route path="/loginPage/:type?" component={LoginPage} />
                 <Redirect to="/" />
             </Switch>

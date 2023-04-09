@@ -1,31 +1,31 @@
 export const genus = {
     Peshekhonovy: {
-        _id: "67rdca3eeb7f6fgeed471198",
+        _id: "1",
         name: "Пешехоновы",
         color: "primary"
     },
     Akindinovy: {
-        _id: "67rdca3eeb7f6fgeed471100",
+        _id: "2",
         name: "Акиндиновы",
         color: "secondary"
     },
     Kadochnikovy: {
-        _id: "67rdca3eeb7f6fgeed4711012",
+        _id: "3",
         name: "Кадочниковы",
         color: "success"
     },
     Kolos: {
-        _id: "67rdca3eeb7f6fgeed471101",
+        _id: "4",
         name: "Колос",
         color: "danger"
     },
     Bondarevsky: {
-        _id: "67rdca3eeb7f6fgeed471102",
+        _id: "5",
         name: "Бондаревские",
         color: "info"
     },
     Lipinsky: {
-        _id: "67rdca3eeb7f6fgeed471103",
+        _id: "6",
         name: "Липинские",
         color: "dark"
     }

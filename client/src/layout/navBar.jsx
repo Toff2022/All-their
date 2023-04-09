@@ -2,21 +2,21 @@ import React from "react";
 import { useState } from "react";
 import NavLink from "../components/ui/navLink";
 import BreadCrumbs from "../components/ui/breadCrumbs";
+import HelloContent from "../components/common/helloContent";
 
 const NavBar = () => {
 
     const [menuItems, setMenuItems] = useState([
         { id: "main", text: "Главная", to: "/", active: true, }, //добавляем пункт active
         { id: "blog", text: "Блог", to: "/blogPage", active: false, },
-        { id: "login", text: "Логин", to: "/loginPage", active: false, },
+        { id: "photoAlbum", text: "Фотоальбом", to: "/photoAlbum", active: false, },
         { id: "familyTree", text: "Семейное Древо", to: "/familyTree", active: false, },
+        { id: "login", text: "Логин", to: "/loginPage", active: false, },
     ])
-
     const currentActivePage = menuItems.find((item) => item.active) //возвращает эл-т, у к-го active=true
     // console.log("currentActivePage", currentActivePage);
-
     const handleItemClick = (id) => {
-        console.log("itemId", id)
+        // console.log("itemId", id)
         //по клику пересоздаём массив 
         const newMenuItems = menuItems.map((item) => ({
             ...item,
@@ -24,7 +24,6 @@ const NavBar = () => {
             active: item.id === id
         }))
         setMenuItems(newMenuItems)
-
     }
     // устанавливает свойство active для main
     const handleSetMainActive = () => {
@@ -37,13 +36,12 @@ const NavBar = () => {
 
     return (
         // flex-nowrap
-        <main className="d-flex inline-block" style={{ height: "30vh" }}>
+        <main className="d-flex inline-block" style={{ height: "40vh" }}>
             <div
                 className="d-flex inline-block flex-shrink-0 p-3 bg-light"
                 style={{ width: "20vh" }}
             >
                 <hr />
-
                 <NavLink
                     menuItems={menuItems}
                     onItemClick={handleItemClick}
@@ -56,7 +54,7 @@ const NavBar = () => {
                         onGoMain={handleSetMainActive}
                     />
                 </div>
-                <h1 className="h3">Контент</h1>
+                <h1 className="h3"><HelloContent /></h1>
             </div>
         </main>
     )

@@ -15,6 +15,11 @@ const LoginPage = () => {
     };
     return (
         <div className="container mt-3" >
+            <hr />
+            <span className="text-container">В любом деле начать нужно с себя!
+                Давайте зарегистрируемся и погрузимся в увлекательный процесс написания своей Родовой Книги!
+            </span>
+            <hr />
             <div className="row">
                 <div className="col-md-6 offset-md-3 shadow p-4">
                     {formType === "register" ? (
