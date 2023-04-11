@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import { relatives } from "../api/fake.api/relatives.api";
 // import { professions } from "../api/fake.api/professions.api";
 import API from "../api";
+import HowMuchRelatives from "../components/common/howMuchRelatives";
 // import { genus } from "../api/fake.api/genus.api";
 // import Relatives from "../api/fake.api/relatives.api"
 
@@ -19,25 +20,10 @@ const FamilyTree = () => {
         setRelatives(relatives.filter((relative) => relative._id !== relativeId))
     }
 
-    const howMuchRelatives = (number) => {
-        if (number === 0) return " У Вас не заведено ни одного родича!"
-        if (number > 0) return `У Вас ${number} родичей!`
-    }
 
     return (
         <>
-            <div className="badge text-bg-success d-flex mt-5">
-                <h3><span className="badge text-bg-success">
-                    Список родственников
-                </span></h3>
-
-                <h4>
-                    <span className={"badge " + (relatives.length > 0 ? "bg-primary" : "bg-danger")}
-                    >
-                        {howMuchRelatives(relatives.length)}
-                    </span>
-                </h4>
-            </div>
+            <HowMuchRelatives number={relatives.length} />
             {relatives.length > 0 && (
                 <table className="table table-success table-striped">
                     <thead>
