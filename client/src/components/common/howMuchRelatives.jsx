@@ -8,16 +8,16 @@ const HowMuchRelatives = ({ number }) => {
     }
     return (
         <>
-            <div className="badge text-bg-success d-flex mt-5">
-                <h3><span className="badge text-bg-success">
-                    Список родственников
-                </span></h3>
-                <h4>
+            <div className="badge d-flex mt-5">
+                <h3>
+                    <span className="badge bg-primary m-2">
+                        Список родственников
+                    </span>
                     <span className={"badge " + (number > 0 ? "bg-primary" : "bg-danger")}
                     >
                         {howMuchRelatives(number)}
                     </span>
-                </h4>
+                </h3>
             </div>
         </>
     )

@@ -2,7 +2,7 @@ import React from 'react';
 import Profession from './profession';
 import Genus from './genus';
 
-const RelativesTable = ({ onHandleDelete, _id, lastName, firstName, patronymic, lastNameBeforeMarriage, profession, age, alive, genus, birthDay, dethDay, adress, bookmark, ...rest }) => {
+const RelativesTable = ({ onHandleDelete, _id, lastName, firstName, patronymic, lastNameBeforeMarriage, profession, age, alive, genus, birthDay, dethDay, adress, sex, bookmark, ...rest }) => {
 
     return (
         <tr key={_id} >
@@ -31,7 +31,8 @@ const RelativesTable = ({ onHandleDelete, _id, lastName, firstName, patronymic, 
             <td>{birthDay}</td>
             <td>{dethDay}</td>
             <td>{adress.city} {adress.street}</td>
-            <td>{bookmark}</td>
+            <td>{sex}</td>
+            {/* <td>{bookmark}</td> */}
             <td>
                 <button
                     className="btn btn-success"

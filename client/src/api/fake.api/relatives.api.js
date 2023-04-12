@@ -12,6 +12,7 @@ export const relatives = [
         genus: [genus.Peshekhonovy],
         birthDay: "03.10.1987",
         adress: { city: "Novokubansk", street: "Moskovskaya" },
+        sex: "муж",
         bookmark: false
     },
     {
@@ -26,6 +27,7 @@ export const relatives = [
         genus: [genus.Peshekhonovy, genus.Akindinovy],
         birthDay: "11.10.1983",
         adress: { city: "Novokubansk", street: "Moskovskaya" },
+        sex: "жен",
         bookmark: false
     },
     {
@@ -40,6 +42,7 @@ export const relatives = [
         genus: [genus.Peshekhonovy],
         birthDay: "29.06.2016",
         adress: { city: "Novokubansk", street: "Moskovskaya" },
+        sex: "жен",
         bookmark: false
     },
     {
@@ -53,6 +56,7 @@ export const relatives = [
         genus: [genus.Peshekhonovy],
         birthDay: "12.02.1953",
         adress: { city: "Novokubansk", street: "Octyabrskaya" },
+        sex: "муж",
         bookmark: false
     },
     {
@@ -67,6 +71,7 @@ export const relatives = [
         genus: [genus.Peshekhonovy, genus.Kadochnikovy],
         birthDay: "25.10.1953",
         adress: { city: "Novokubansk", street: "Octyabrskaya" },
+        sex: "жен",
         bookmark: false
     },
     {
@@ -81,6 +86,7 @@ export const relatives = [
         genus: [genus.Peshekhonovy, genus.Kolos],
         birthDay: "25.09.1976",
         adress: { city: "Novokubansk", street: "Sportivnaya" },
+        sex: "жен",
         bookmark: false
     },
     {
@@ -94,6 +100,7 @@ export const relatives = [
         genus: [genus.Bondarevsky, genus.Peshekhonovy],
         birthDay: "25.09.2008",
         adress: { city: "Novokubansk", street: "Sportivnaya" },
+        sex: "муж",
         bookmark: false
     },
     {
@@ -107,6 +114,7 @@ export const relatives = [
         genus: [genus.Lipinsky],
         birthDay: "13.01.1983",
         adress: { city: "Novokubansk", street: "Sportivnaya" },
+        sex: "муж",
         bookmark: false
     }, {
         _id: "67rdca3eeb7f6fgeed471823",
@@ -119,6 +127,7 @@ export const relatives = [
         genus: [genus.Peshekhonovy],
         birthDay: "1906",
         adress: { city: "Novokubansk", street: "-" },
+        sex: "муж",
         dethDay: "05.12.1955",
         bookmark: false
     },
@@ -131,9 +140,10 @@ export const relatives = [
         // age: 69,
         alive: "Нет",
         lastNameBeforeMarriage: "Косынко",
-        genus: [genus.Peshekhonovy],
+        genus: [genus.Peshekhonovy, genus.Kosynko],
         birthDay: "10.09.1910",
         adress: { city: "Novokubansk", street: "-" },
+        sex: "жен",
         dethDay: "20.01.2000",
         bookmark: false
     },
@@ -148,6 +158,7 @@ export const relatives = [
         lastNameBeforeMarriage: "Григоренко",
         genus: [genus.Akindinovy],
         adress: { city: "Новокубанск", street: "К.Маркса" },
+        sex: "жен",
         birthDay: "25.09.1954",
         bookmark: false
     },
@@ -161,6 +172,7 @@ export const relatives = [
         alive: "Нет",
         genus: [genus.Akindinovy],
         adress: { city: "Novokubansk", street: "-" },
+        sex: "муж",
         birthDay: "28.05.1950",
         dethDay: "16.06.2011",
         bookmark: false

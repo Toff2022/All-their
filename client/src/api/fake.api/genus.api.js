@@ -28,18 +28,23 @@ export const genus = {
         _id: "6",
         name: "Липинские",
         color: "dark"
+    },
+    Kosynko: {
+        _id: "7",
+        name: "Косынко",
+        color: "warning"
     }
 };
 
-// const fetchAll = () =>
-//     new Promise((resolve) => {
-//         window.setTimeout(function () {
-//             resolve(genus);
-//         }, 2000);
-//     });
-// export default {
-//     fetchAll
-// };
-export function fetchAll () {
-    return genus
-}
+const fetchAll = () =>
+    new Promise((resolve) => {
+        window.setTimeout(function () {
+            resolve(genus);
+        }, 2000);
+    });
+export default {
+    fetchAll
+};
+// export function fetchAll () {
+//     return genus
+// }
