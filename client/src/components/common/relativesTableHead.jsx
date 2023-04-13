@@ -2,29 +2,39 @@ import React, { useState, useEffect } from 'react';
 import GroupList from './groupList';
 import RelativesTable from './relativesTable';
 import API from '../../api';
+import Pagination from './pagination';
+import { paginate } from '../../utils/paginate';
 
-const RelativesTableHead = ({ number, relatives, ...rest }) => {
+const RelativesTableHead = ({ count, relatives, ...rest }) => {
+
     const [genus, setGenus] = useState();
-
-    const handleGenusSelect = (params) => {
-        console.log("params", params);
+    const [selectedGenus, setSelectrdGenus] = useState()
+    const handleGenusSelect = (item) => {
+        setSelectrdGenus(item)
     }
     useEffect(() => {
         API.genus.fetchAll().then((data) => setGenus(data))
     }, []);
 
+    const [currentPage, setCurrentPage] = useState(1)
+    const pageSize = 6
+    const handlePageChange = (pageIndex) => {
+        setCurrentPage(pageIndex)
+    }
+
+    const relativesCrop = paginate(relatives, currentPage, pageSize)
+    // const filteredGenus = selectedGenus? Object.keys(genus).filter((gen) => gen.name === selectedGenus)
+    // console.log("genus", genus);
     return (
         <>
             {genus &&
                 <GroupList
+                    selectedItem={selectedGenus}
                     items={genus}
                     onItemSelect={handleGenusSelect}
-                    valueProperty="_id"
-                    contentProperty='name'
-                    elseProperty='color'
                 />
             }
-            {number > 0 && (
+            {count > 0 && (
                 <table className="table table-success table-striped">
                     <thead>
                         <tr>
@@ -41,7 +51,7 @@ const RelativesTableHead = ({ number, relatives, ...rest }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {relatives.map((relative) => (
+                        {relativesCrop.map((relative) => (
                             <RelativesTable
                                 key={relative._id}
                                 {...rest}
@@ -51,6 +61,7 @@ const RelativesTableHead = ({ number, relatives, ...rest }) => {
                     </tbody>
                 </table>
             )}
+            <Pagination itemsCount={count} pageSize={pageSize} onPageChange={handlePageChange} currentPage={currentPage} />
         </>
     );
 }

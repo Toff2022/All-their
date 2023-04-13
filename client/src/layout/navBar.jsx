@@ -36,7 +36,7 @@ const NavBar = () => {
 
     return (
         // flex-nowrap
-        <main className="d-flex inline-block" style={{ height: "40vh" }}>
+        <main className="d-flex inline-block" style={{ height: "36vh" }}>
             <div
                 className="d-flex inline-block flex-shrink-0 p-3 bg-light"
                 style={{ width: "20vh" }}
@@ -47,14 +47,14 @@ const NavBar = () => {
                     onItemClick={handleItemClick}
                 />
             </div >
-            <div className="p-4">
+            <div className="container-bred-crumbs p-4">
                 <div>
                     <BreadCrumbs
                         page={currentActivePage}
                         onGoMain={handleSetMainActive}
                     />
                 </div>
-                <h1 className="h3"><HelloContent /></h1>
+                <h1 className="container-hello-content h3"><HelloContent /></h1>
             </div>
         </main>
     )

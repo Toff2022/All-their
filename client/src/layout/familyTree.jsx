@@ -20,12 +20,13 @@ const FamilyTree = () => {
     const handleDelete = (relativeId) => {
         setRelatives(relatives.filter((relative) => relative._id !== relativeId))
     }
+    const count = relatives.length
 
     return (
         <div className="familyTree-container">
-            <HowMuchRelatives number={relatives.length} />
+            <HowMuchRelatives count={count} />
             <RelativesTableHead
-                number={relatives.length}
+                count={count}
                 relatives={relatives}
                 onHandleDelete={handleDelete}
             />

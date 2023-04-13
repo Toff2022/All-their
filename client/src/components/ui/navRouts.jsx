@@ -16,6 +16,8 @@ const NavRouts = (props) => {
             <li className={getClasses()} onClick={handleClick}>
                 {/* <a href={props.link}>{props.text}</a> */}
                 <Link
+                    style={{ color: 'brown' }}
+                    // style={{ marginRight: spacing + 'em' }}
                     aria-current="page"
                     to={props.to}
                 >
