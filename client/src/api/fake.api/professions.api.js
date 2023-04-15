@@ -37,7 +37,7 @@ const fetchAll = () =>
 
 export default {
     fetchAll
-}
-    // export function fetchAll () {
+};
+// export function fetchAll () {
 //     return professions
 // };

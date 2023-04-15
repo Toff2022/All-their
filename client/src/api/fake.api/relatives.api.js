@@ -83,7 +83,7 @@ export const relatives = [
         age: 41,
         alive: "Да",
         lastNameBeforeMarriage: "Пешехонова",
-        genus: [genus.Peshekhonovy, genus.Kolos],
+        genus: [genus.Kolos, genus.Peshekhonovy],
         birthDay: "25.09.1976",
         adress: { city: "Novokubansk", street: "Sportivnaya" },
         sex: "жен",
@@ -187,5 +187,5 @@ export const relatives = [
 //     });
 
 export function fetchAll () {
-    return relatives
+    return relatives;
 };

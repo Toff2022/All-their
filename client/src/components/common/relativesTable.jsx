@@ -1,9 +1,25 @@
-import React from 'react';
-import Profession from './profession';
-import Genus from './genus';
+import React from "react";
+import Profession from "./profession";
+import Genus from "./genus";
+import PropTypes from "prop-types";
 
-const RelativesTable = ({ onHandleDelete, _id, lastName, firstName, patronymic, lastNameBeforeMarriage, profession, age, alive, genus, birthDay, dethDay, adress, sex, bookmark, ...rest }) => {
-
+const RelativesTable = ({
+    onHandleDelete,
+    _id,
+    lastName,
+    firstName,
+    patronymic,
+    lastNameBeforeMarriage,
+    profession,
+    age,
+    alive,
+    genus,
+    birthDay,
+    dethDay,
+    adress,
+    sex,
+    ...rest
+}) => {
     return (
         <tr key={_id} >
             <td>{lastName} {firstName} {patronymic} {lastNameBeforeMarriage}</td>
@@ -48,6 +64,21 @@ const RelativesTable = ({ onHandleDelete, _id, lastName, firstName, patronymic, 
             </td>
         </tr>
     );
-}
-
+};
+RelativesTable.propTypes = {
+    _id: PropTypes.string,
+    lastName: PropTypes.string,
+    firstName: PropTypes.string,
+    patronymic: PropTypes.string,
+    lastNameBeforeMarriage: PropTypes.string,
+    age: PropTypes.number,
+    profession: PropTypes.array,
+    alive: PropTypes.string,
+    genus: PropTypes.array,
+    birthDay: PropTypes.string,
+    dethDay: PropTypes.string,
+    adress: PropTypes.object,
+    sex: PropTypes.string,
+    onHandleDelete: PropTypes.func
+};
 export default RelativesTable;

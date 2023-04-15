@@ -1,38 +1,34 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import NavLink from "../components/ui/navLink";
 import BreadCrumbs from "../components/ui/breadCrumbs";
 import HelloContent from "../components/common/helloContent";
 
 const NavBar = () => {
-
     const [menuItems, setMenuItems] = useState([
-        { id: "main", text: "Главная", to: "/", active: true, }, //добавляем пункт active
-        { id: "blog", text: "Блог", to: "/blogPage", active: false, },
-        { id: "photoAlbum", text: "Фотоальбом", to: "/photoAlbum", active: false, },
-        { id: "familyTree", text: "Семейное Древо", to: "/familyTree", active: false, },
-        { id: "login", text: "Логин", to: "/loginPage", active: false, },
-    ])
-    const currentActivePage = menuItems.find((item) => item.active) //возвращает эл-т, у к-го active=true
+        { id: "main", text: "Главная", to: "/", active: true }, // добавляем пункт active
+        { id: "blog", text: "Блог", to: "/blogPage", active: false },
+        { id: "photoAlbum", text: "Фотоальбом", to: "/photoAlbum", active: false },
+        { id: "familyTree", text: "Семейное Древо", to: "/familyTree", active: false },
+        { id: "login", text: "Логин", to: "/loginPage", active: false }
+    ]);
+    const currentActivePage = menuItems.find((item) => item.active); //  возвращает эл-т, у к-го active=true
     // console.log("currentActivePage", currentActivePage);
     const handleItemClick = (id) => {
-        // console.log("itemId", id)
-        //по клику пересоздаём массив 
-        const newMenuItems = menuItems.map((item) => ({
+        const newMenuItems = menuItems.map((item) => ({ // по клику пересоздаём массив
             ...item,
-            //аналог выражения item.id === id ? true : false
+            // аналог выражения item.id === id ? true : false
             active: item.id === id
-        }))
-        setMenuItems(newMenuItems)
-    }
+        }));
+        setMenuItems(newMenuItems);
+    };
     // устанавливает свойство active для main
     const handleSetMainActive = () => {
         const newMenuItems = menuItems.map((item) => ({
             ...item,
             active: item.id === "main"
-        }))
-        setMenuItems(newMenuItems)
-    }
+        }));
+        setMenuItems(newMenuItems);
+    };
 
     return (
         // flex-nowrap
@@ -57,8 +53,8 @@ const NavBar = () => {
                 <h1 className="container-hello-content h3"><HelloContent /></h1>
             </div>
         </main>
-    )
-}
+    );
+};
 // <div className="nav-bar" >
 //     <ul className="nav nav-pills nav-fill nav-justified">
 //         <li className="nav-item">

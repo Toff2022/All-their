@@ -8,25 +8,20 @@ import RelativesTableHead from "../components/common/relativesTableHead";
 // import Relatives from "../api/fake.api/relatives.api"
 
 const FamilyTree = () => {
-
     // const relativesURL = "http://localhost:8080/api/relatives"
+    const [relatives, setRelatives] = useState(API.relatives.fetchAll());
+    // const [professions, setProfessions] = useState(API.professions.fetchAll());
+    // const [genus, setGenus] = useState(API.genus.fetchAll());
 
-    const [relatives, setRelatives] = useState(API.relatives.fetchAll())
-    const [professions, setProfessions] = useState(API.professions.fetchAll())
-    const [genus, setGenus] = useState(API.genus.fetchAll())
-    // console.log("relatives", relatives);
-    // console.log("professions", professions);
-    // console.log("genus", genus);
     const handleDelete = (relativeId) => {
-        setRelatives(relatives.filter((relative) => relative._id !== relativeId))
-    }
-    const count = relatives.length
-
+        setRelatives(relatives.filter((relative) => relative._id !== relativeId));
+    };
+    const maxCount = relatives.length;
     return (
         <div className="familyTree-container">
-            <HowMuchRelatives count={count} />
+            <HowMuchRelatives maxCount={maxCount} />
             <RelativesTableHead
-                count={count}
+                maxCount={maxCount}
                 relatives={relatives}
                 onHandleDelete={handleDelete}
             />

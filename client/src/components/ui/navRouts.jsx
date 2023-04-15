@@ -1,31 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const NavRouts = (props) => {
-
+const NavRouts = ({ onActiveChange, id, to, text, active }) => {
     const handleClick = () => {
-        props.onActiveChange(props.id)
-    }
+        onActiveChange(id);
+    };
 
     const getClasses = () => {
-        let classes = "nav-link"
-        return (classes += props.active ? " active" : "")
-    }
+        let classes = "nav-link";
+        return (classes += active ? " active" : "");
+    };
     return (
         <div className="nav-item ">
             <li className={getClasses()} onClick={handleClick}>
-                {/* <a href={props.link}>{props.text}</a> */}
+                {/* <a href={link}>{text}</a> */}
                 <Link
-                    style={{ color: 'brown' }}
+                    style={{ color: "brown" }}
                     // style={{ marginRight: spacing + 'em' }}
                     aria-current="page"
-                    to={props.to}
+                    to={to}
                 >
-                    {props.text}
+                    {text}
                 </Link>
             </li>
         </div>
-    )
-}
-
+    );
+};
+NavRouts.propTypes = {
+    to: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    active: PropTypes.bool.isRequired,
+    onActiveChange: PropTypes.func
+};
 export default NavRouts;

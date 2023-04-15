@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-const HowMuchRelatives = ({ number }) => {
-
-    const howMuchRelatives = (number) => {
-        if (number === 0) return " У Вас не заведено ни одного родича!"
-        if (number > 0) return `У Вас ${number} родичей!`
-    }
+const HowMuchRelatives = ({ maxCount }) => {
+    const howMuchRelatives = (maxCount) => {
+        if (maxCount === 0) return " У Вас не заведено ни одного родича!";
+        if (maxCount > 0) return `У Вас ${maxCount} родичей!`;
+    };
     return (
         <>
             <div className="badge d-flex mt-5">
@@ -13,14 +13,17 @@ const HowMuchRelatives = ({ number }) => {
                     <span className="badge bg-primary m-2">
                         Список родственников
                     </span>
-                    <span className={"badge " + (number > 0 ? "bg-primary" : "bg-danger")}
+                    <span className={"badge " + (maxCount > 0 ? "bg-primary" : "bg-danger")}
                     >
-                        {howMuchRelatives(number)}
+                        {howMuchRelatives(maxCount)}
                     </span>
                 </h3>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default HowMuchRelatives
+HowMuchRelatives.propTypes = {
+    maxCount: PropTypes.number
+};
+export default HowMuchRelatives;

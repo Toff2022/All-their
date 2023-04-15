@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import GroupList from './groupList';
-import RelativesTable from './relativesTable';
-import API from '../../api';
-import Pagination from './pagination';
-import { paginate } from '../../utils/paginate';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import GroupList from "./groupList";
+import RelativesTable from "./relativesTable";
+import API from "../../api";
+import Pagination from "./pagination";
+import { paginate } from "../../utils/paginate";
 
-const RelativesTableHead = ({ count, relatives, ...rest }) => {
-
+const RelativesTableHead = ({ maxCount, relatives, ...rest }) => {
     const [genus, setGenus] = useState();
-    const [selectedGenus, setSelectrdGenus] = useState()
+    const [selectedGenus, setSelectrdGenus] = useState();
     const handleGenusSelect = (item) => {
-        setSelectrdGenus(item)
-    }
+        // console.log("item", item);
+        setSelectrdGenus(item.name);
+    };
     useEffect(() => {
-        API.genus.fetchAll().then((data) => setGenus(data))
+        API.genus.fetchAll().then((data) => setGenus(data));
     }, []);
 
-    const [currentPage, setCurrentPage] = useState(1)
-    const pageSize = 6
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 10;
     const handlePageChange = (pageIndex) => {
-        setCurrentPage(pageIndex)
-    }
+        setCurrentPage(pageIndex);
+    };
+    console.log("selectedGenus", selectedGenus);
+    const filteredGenus = selectedGenus ? relatives.filter((relative) => relative.genus[0].name === selectedGenus) : relatives;
 
-    const relativesCrop = paginate(relatives, currentPage, pageSize)
-    // const filteredGenus = selectedGenus? Object.keys(genus).filter((gen) => gen.name === selectedGenus)
-    // console.log("genus", genus);
+    const relativesCrop = paginate(filteredGenus, currentPage, pageSize);
+
+    console.log("filteredGenus", filteredGenus);
+    const genusCount = filteredGenus.length;
     return (
         <>
             {genus &&
@@ -33,8 +37,8 @@ const RelativesTableHead = ({ count, relatives, ...rest }) => {
                     items={genus}
                     onItemSelect={handleGenusSelect}
                 />
-            }
-            {count > 0 && (
+            };
+            {maxCount > 0 && (
                 <table className="table table-success table-striped">
                     <thead>
                         <tr>
@@ -60,10 +64,15 @@ const RelativesTableHead = ({ count, relatives, ...rest }) => {
                         ))}
                     </tbody>
                 </table>
-            )}
-            <Pagination itemsCount={count} pageSize={pageSize} onPageChange={handlePageChange} currentPage={currentPage} />
+            )};
+            <Pagination itemsCount={genusCount} pageSize={pageSize} onPageChange={handlePageChange} currentPage={currentPage} />
         </>
     );
-}
+};
 
+RelativesTableHead.propTypes = {
+    maxCount: PropTypes.number.isRequired,
+    genusCount: PropTypes.number.isRequired,
+    relatives: PropTypes.array.isRequired
+};
 export default RelativesTableHead;

@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Genus = ({ _id, color, name }) => {
     return (
@@ -9,6 +10,10 @@ const Genus = ({ _id, color, name }) => {
             {name}
         </span>
     );
-}
-
+};
+Genus.propTypes = {
+    _id: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+};
 export default Genus;

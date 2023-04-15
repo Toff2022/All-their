@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
 const GroupList = ({ items, valueProperty, contentProperty, colorProperty, onItemSelect, selectedItem }) => {
     // console.log(Object.keys(items));
@@ -23,19 +23,19 @@ const GroupList = ({ items, valueProperty, contentProperty, colorProperty, onIte
             </ul>
         </div>
     );
-}
+};
 
 GroupList.defaultProps = {
     valueProperty: "_id",
     contentProperty: "name",
     colorProperty: "color"
-}
+};
 GroupList.propTypes = {
     items: PropTypes.object.isRequired,
     valueProperty: PropTypes.string.isRequired,
     contentProperty: PropTypes.string.isRequired,
     colorProperty: PropTypes.string.isRequired,
-    selectedItem: PropTypes.object,
-    onItemSelect: PropTypes.func,
-}
+    selectedItem: PropTypes.string,
+    onItemSelect: PropTypes.func
+};
 export default GroupList;
