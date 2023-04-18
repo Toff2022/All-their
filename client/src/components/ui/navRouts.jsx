@@ -16,7 +16,7 @@ const NavRouts = ({ onActiveChange, id, to, text, active }) => {
             <li className={getClasses()} onClick={handleClick}>
                 {/* <a href={link}>{text}</a> */}
                 <Link
-                    style={{ color: "brown" }}
+                    style={{ color: "black" }}
                     // style={{ marginRight: spacing + 'em' }}
                     aria-current="page"
                     to={to}

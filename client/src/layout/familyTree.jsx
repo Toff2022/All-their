@@ -11,12 +11,16 @@ const FamilyTree = () => {
     // const relativesURL = "http://localhost:8080/api/relatives"
     const [relatives, setRelatives] = useState(API.relatives.fetchAll());
     // const [professions, setProfessions] = useState(API.professions.fetchAll());
-    // const [genus, setGenus] = useState(API.genus.fetchAll());
-
+    //     const [genus, setGenus] = useState();
+    //     useEffect(() => {
+    // API.genus.fetchAll()
+    //     },[])
+    //     console.log("genus", genus);
     const handleDelete = (relativeId) => {
         setRelatives(relatives.filter((relative) => relative._id !== relativeId));
     };
     const maxCount = relatives.length;
+    // console.log("genusCount", genusCount);
     return (
         <div className="familyTree-container">
             <HowMuchRelatives maxCount={maxCount} />

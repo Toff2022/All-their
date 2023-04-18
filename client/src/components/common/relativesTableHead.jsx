@@ -22,21 +22,28 @@ const RelativesTableHead = ({ maxCount, relatives, ...rest }) => {
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);
     };
-    console.log("selectedGenus", selectedGenus);
+    // console.log("selectedGenus", selectedGenus);
     const filteredGenus = selectedGenus ? relatives.filter((relative) => relative.genus[0].name === selectedGenus) : relatives;
-
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedGenus]);
     const relativesCrop = paginate(filteredGenus, currentPage, pageSize);
-
-    console.log("filteredGenus", filteredGenus);
+    // console.log("filteredGenus", filteredGenus);
     const genusCount = filteredGenus.length;
+    const clearFilter = () => {
+        setSelectrdGenus();
+    };
     return (
         <>
             {genus &&
-                <GroupList
-                    selectedItem={selectedGenus}
-                    items={genus}
-                    onItemSelect={handleGenusSelect}
-                />
+                <>
+                    <GroupList
+                        selectedItem={selectedGenus}
+                        items={genus}
+                        onItemSelect={handleGenusSelect}
+                    />
+                    <button className="btn btn-secondary m-1" onClick={clearFilter}>Сбросить фильтр</button>
+                </>
             };
             {maxCount > 0 && (
                 <table className="table table-success table-striped">
@@ -65,14 +72,17 @@ const RelativesTableHead = ({ maxCount, relatives, ...rest }) => {
                     </tbody>
                 </table>
             )};
-            <Pagination itemsCount={genusCount} pageSize={pageSize} onPageChange={handlePageChange} currentPage={currentPage} />
+            <div className="d-flex justify-content-center">
+                <Pagination itemsCount={genusCount} pageSize={pageSize} onPageChange={handlePageChange} currentPage={currentPage} />
+            </div>
         </>
     );
 };
 
 RelativesTableHead.propTypes = {
     maxCount: PropTypes.number.isRequired,
-    genusCount: PropTypes.number.isRequired,
+    genusCount: PropTypes.number,
     relatives: PropTypes.array.isRequired
 };
+
 export default RelativesTableHead;
