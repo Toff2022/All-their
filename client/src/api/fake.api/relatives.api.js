@@ -168,7 +168,7 @@ export const relatives = [
         firstName: "Евгений",
         patronymic: "Константинович",
         profession: [professions.electricalEngineer],
-        // age: 69,
+        age: 0,
         alive: "Нет",
         genus: [genus.Akindinovy],
         adress: { city: "Novokubansk", street: "-" },
@@ -179,13 +179,17 @@ export const relatives = [
     }
 ];
 
-// const fetchAll = () =>
-//     new Promise((resolve) => {
-//         window.setTimeout(function () {
-//             resolve(relatives);
-//         }, 2000);
-//     });
+const fetchAll = () =>
+    new Promise((resolve) => {
+        window.setTimeout(function () {
+            resolve(relatives);
+        }, 2000);
+    });
 
-export function fetchAll () {
-    return relatives;
+export default {
+    fetchAll
 };
+
+// export function fetchAll () {
+//     return relatives;
+// };

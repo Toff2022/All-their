@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// import { toNumber } from "lodash";
+import React, { useEffect, useState } from "react";
 // import { relatives } from "../api/fake.api/relatives.api";
 // import { professions } from "../api/fake.api/professions.api";
 import API from "../api";
@@ -9,26 +10,50 @@ import RelativesTableHead from "../components/common/relativesTableHead";
 
 const FamilyTree = () => {
     // const relativesURL = "http://localhost:8080/api/relatives"
-    const [relatives, setRelatives] = useState(API.relatives.fetchAll());
+    const [relatives, setRelatives] = useState();
+    const [genus, setGenus] = useState();
+
+    // const [maxCount, setMaxCount] = useState(relatives.length);
+    useEffect(() => {
+        API.relatives.fetchAll()
+            .then((data) => setRelatives(data));
+        // .finally((relatives) => console.log("data", relatives));
+    }, []);
+    useEffect(() => {
+        API.genus.fetchAll().then((data) => setGenus(data));
+    }, []);
     // const [professions, setProfessions] = useState(API.professions.fetchAll());
     //     const [genus, setGenus] = useState();
     //     useEffect(() => {
     // API.genus.fetchAll()
     //     },[])
-    //     console.log("genus", genus);
+
     const handleDelete = (relativeId) => {
         setRelatives(relatives.filter((relative) => relative._id !== relativeId));
     };
-    const maxCount = relatives.length;
+
+    // async function relativesLength () {
+    //     const maxCount = await relatives.length;
+    //     return maxCount;
+    // };
+
+    // const maxCount = toNumber(relativesLength());
+    // const maxCount = 12;
     // console.log("genusCount", genusCount);
+
     return (
         <div className="familyTree-container">
-            <HowMuchRelatives maxCount={maxCount} />
-            <RelativesTableHead
-                maxCount={maxCount}
-                relatives={relatives}
-                onHandleDelete={handleDelete}
-            />
+            {relatives && (
+
+                <HowMuchRelatives relatives={relatives} />
+            )}
+            {relatives && (
+                <RelativesTableHead
+                    genus={genus}
+                    relatives={relatives}
+                    onHandleDelete={handleDelete}
+                />
+            )}
         </div>
     );
 };
