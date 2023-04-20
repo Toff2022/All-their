@@ -1,4 +1,4 @@
-export const genus = {
+export const genusObj = {
     Peshekhonovy: {
         _id: "1",
         name: "Пешехоновы",
@@ -36,43 +36,43 @@ export const genus = {
     }
 };
 
-// export const genus = [
-//     {
-//         _id: "1",
-//         name: "Пешехоновы",
-//         color: "primary"
-//     },
-//     {
-//         _id: "2",
-//         name: "Акиндиновы",
-//         color: "secondary"
-//     },
-//     {
-//         _id: "3",
-//         name: "Кадочниковы",
-//         color: "success"
-//     },
-//     {
-//         _id: "4",
-//         name: "Колос",
-//         color: "danger"
-//     },
-//     {
-//         _id: "5",
-//         name: "Бондаревские",
-//         color: "info"
-//     },
-//     {
-//         _id: "6",
-//         name: "Липинские",
-//         color: "dark"
-//     },
-//     {
-//         _id: "7",
-//         name: "Косынко",
-//         color: "warning"
-//     }
-// ];
+export const genus = [
+    {
+        _id: "1",
+        name: "Пешехоновы",
+        color: "primary"
+    },
+    {
+        _id: "2",
+        name: "Акиндиновы",
+        color: "secondary"
+    },
+    {
+        _id: "3",
+        name: "Кадочниковы",
+        color: "success"
+    },
+    {
+        _id: "4",
+        name: "Колос",
+        color: "danger"
+    },
+    {
+        _id: "5",
+        name: "Бондаревские",
+        color: "info"
+    },
+    {
+        _id: "6",
+        name: "Липинские",
+        color: "dark"
+    },
+    {
+        _id: "7",
+        name: "Косынко",
+        color: "warning"
+    }
+];
 const fetchAll = () =>
     new Promise((resolve) => {
         window.setTimeout(function () {

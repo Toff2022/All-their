@@ -1,5 +1,5 @@
 import { professions } from "./professions.api";
-import { genus } from "./genus.api";
+import { genusObj as genus } from "./genus.api";
 export const relatives = [
     {
         _id: "67rdca3eeb7f6fgeed471815",
@@ -106,7 +106,7 @@ export const relatives = [
     {
         _id: "67rdca3eeb7f6fgeed471822",
         lastName: "Липинский",
-        firstName: "Владислав",
+        firstName: "Вячеслав",
         patronymic: "Сергеевич",
         profession: [professions.electricalEngineer],
         age: 40,

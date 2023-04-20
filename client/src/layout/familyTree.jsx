@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 // import { professions } from "../api/fake.api/professions.api";
 import API from "../api";
 import HowMuchRelatives from "../components/common/howMuchRelatives";
-import RelativesTableHead from "../components/common/relativesTableHead";
+import RelativesMainTable from "../components/common/relativesMainTable";
 // import { genus } from "../api/fake.api/genus.api";
 // import Relatives from "../api/fake.api/relatives.api"
 
@@ -48,7 +48,7 @@ const FamilyTree = () => {
                 <HowMuchRelatives relatives={relatives} />
             )}
             {relatives && (
-                <RelativesTableHead
+                <RelativesMainTable
                     genus={genus}
                     relatives={relatives}
                     onHandleDelete={handleDelete}

@@ -3,7 +3,7 @@ import Profession from "./profession";
 import Genus from "./genus";
 import PropTypes from "prop-types";
 
-const RelativesTable = ({
+const RelativesTableBody = ({
     onHandleDelete,
     _id,
     lastName,
@@ -65,7 +65,7 @@ const RelativesTable = ({
         </tr>
     );
 };
-RelativesTable.propTypes = {
+RelativesTableBody.propTypes = {
     _id: PropTypes.string,
     lastName: PropTypes.string,
     firstName: PropTypes.string,
@@ -81,4 +81,4 @@ RelativesTable.propTypes = {
     sex: PropTypes.string,
     onHandleDelete: PropTypes.func
 };
-export default RelativesTable;
+export default RelativesTableBody;
