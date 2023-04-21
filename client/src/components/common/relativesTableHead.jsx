@@ -2,20 +2,27 @@ import React from "react";
 import RelativesTableBody from "./relativesTableBody";
 import PropTypes from "prop-types"
 
-const RelativesTableHead = ({ relativesCrop, relatives, ...rest }) => {
+const RelativesTableHead = ({ relativesCrop, relatives, onSort, currrentSort, ...rest }) => {
+    const handleSort = (item) => {
+        if (currrentSort.iter === item) {
+            onSort(({ ...currrentSort, order: currrentSort.order === "asc" ? "desc" : "asc" }));
+        } else {
+            onSort({ iter: item, order: "asc" })
+        }
+    };
     return (
         <table className="table table-success table-striped">
             <thead>
                 <tr>
-                    <th scope="col"> ФИО </th>
-                    <th scope="col"> Профессия </th>
-                    <th scope="col"> Возвраст </th>
-                    <th scope="col"> Жив Ныне </th>
+                    <th onClick={() => handleSort("lastName")} scope="col"> ФИО </th>
+                    <th onClick={() => handleSort("profession.name")} scope="col"> Профессия </th>
+                    <th onClick={() => handleSort("age")} scope="col"> Возвраст </th>
+                    <th onClick={() => handleSort("alive")} scope="col"> Жив Ныне </th>
                     <th scope="col"> РОД </th>
-                    <th scope="col"> День Рождения </th>
+                    <th onClick={() => handleSort("birthDay")} scope="col"> День Рождения </th>
                     <th scope="col"> День Смерти </th>
                     <th scope="col"> Адрес </th>
-                    <th scope="col"> Пол </th>
+                    <th onClick={() => handleSort("sex")} scope="col"> Пол </th>
                     <th scope="col"> Кнопаньки </th>
                 </tr>
             </thead>
@@ -32,6 +39,9 @@ const RelativesTableHead = ({ relativesCrop, relatives, ...rest }) => {
 }
 
 RelativesTableHead.propTypes = {
-    relatives: PropTypes.array
+    relatives: PropTypes.array,
+    onSort: PropTypes.func,
+    currrentSort: PropTypes.object
+
 }
 export default RelativesTableHead;

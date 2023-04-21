@@ -5,15 +5,19 @@ import GroupList from "./groupList";
 import Pagination from "./pagination";
 import { paginate } from "../../utils/paginate";
 import RelativesTableHead from "./relativesTableHead";
+import _ from "lodash";
 
 const RelativesMainTable = ({ relatives, genus, ...rest }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedGenus, setSelectrdGenus] = useState();
+    const [sortBy, setSortBy] = useState({ iter: "lastName", order: "asc" });
     const handleGenusSelect = (item) => {
         // console.log("item", item);
         setSelectrdGenus(item.name);
     };
-
+    const handleSort = (item) => {
+        setSortBy(item);
+    };
     const pageSize = 10;
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);
@@ -26,13 +30,15 @@ const RelativesMainTable = ({ relatives, genus, ...rest }) => {
         setCurrentPage(1);
     }, [selectedGenus]);
 
-    const relativesCrop = paginate(filteredGenus, currentPage, pageSize);
     // console.log("filteredGenus", filteredGenus);
     const genusCount = filteredGenus.length;
+
+    const sortedGenus = _.orderBy(filteredGenus, [sortBy.iter], [sortBy.order]);
 
     const clearFilter = () => {
         setSelectrdGenus();
     };
+    const relativesCrop = paginate(sortedGenus, currentPage, pageSize);
     useEffect(() => {
         if (currentPage > Math.ceil(filteredGenus.length / pageSize) &&
             currentPage > 1
@@ -41,6 +47,7 @@ const RelativesMainTable = ({ relatives, genus, ...rest }) => {
         };
     }, [relatives]);
     const maxCount = Object.keys(relatives).length;
+
     return (
         <div>
             {genus &&
@@ -54,7 +61,12 @@ const RelativesMainTable = ({ relatives, genus, ...rest }) => {
                 </div>
             };
             {maxCount > 0 && (
-                <RelativesTableHead relativesCrop={relativesCrop} />
+                <RelativesTableHead
+                    relativesCrop={relativesCrop}
+                    relatives={relatives}
+                    onSort={handleSort}
+                    currrentSort={sortBy}
+                    {...rest} />
             )};
             <div className="d-flex justify-content-center">
                 <Pagination itemsCount={genusCount} pageSize={pageSize} onPageChange={handlePageChange} currentPage={currentPage} />

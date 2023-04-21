@@ -10,7 +10,7 @@
             "driver"
         ],
         "age": 34,
-        "alive": true,
+        "alive": "Да",
         "genus": [
             "Peshekhonovy"
         ],
@@ -32,7 +32,7 @@
             "driver"
         ],
         "age": 39,
-        "alive": true,
+        "alive": "Да",
         "lastNameBeforeMarriage": "Акиндинова",
         "genus": [
             "Peshekhonovy",
@@ -55,7 +55,7 @@
             "preschoolChild"
         ],
         "age": 6,
-        "alive": true,
+        "alive": "Да",
         "lastNameBeforeMarriage": "Пешехонова",
         "genus": [
             "Peshekhonovy"
@@ -78,7 +78,7 @@
             "driver"
         ],
         "age": 69,
-        "alive": true,
+        "alive": "Да",
         "genus": [
             "Peshekhonovy"
         ],
@@ -99,7 +99,7 @@
             "taxingInspector"
         ],
         "age": 69,
-        "alive": true,
+        "alive": "Да",
         "lastNameBeforeMarriage": "Кадочникова",
         "genus": [
             "Peshekhonovy",
@@ -123,7 +123,7 @@
             "driver"
         ],
         "age": 41,
-        "alive": true,
+        "alive": "Да",
         "lastNameBeforeMarriage": "Пешехонова",
         "genus": [
             "Peshekhonovy",
