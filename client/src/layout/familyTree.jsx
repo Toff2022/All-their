@@ -9,6 +9,7 @@ const FamilyTree = () => {
     // const relativesURL = "http://localhost:8080/api/relatives"
     const [relatives, setRelatives] = useState();
     const [genus, setGenus] = useState();
+
     useEffect(() => {
         API.relatives.fetchAll()
             .then((data) => setRelatives(data));

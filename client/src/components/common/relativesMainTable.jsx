@@ -48,7 +48,7 @@ const RelativesMainTable = ({ relatives, genus, ...rest }) => {
     const maxCount = Object.keys(relatives).length;
     const columns = {
         name: { iter: "lastName", name: "ФИО" },
-        profession: { iter: "profession.name", name: "Профессия" },
+        profession: { iter: "profession", name: "Профессия" },
         age: { iter: "age", name: "Возвраст" },
         alive: { iter: "alive", name: "Жив Ныне" },
         genus: { name: "РОД" },

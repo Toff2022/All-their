@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const HowMuchRelatives = ({ relatives }) => {
-    console.log("relatives", relatives);
     const maxCount = relatives.length;
     const howMuchRelatives = (maxCount) => {
         if (maxCount === 0) return " У Вас не заведено ни одного родича!";
@@ -19,7 +18,6 @@ const HowMuchRelatives = ({ relatives }) => {
                     >
                         {howMuchRelatives(maxCount)}
                     </span>
-                    {/* { } */}
                 </h3>
             </div>
         </>
