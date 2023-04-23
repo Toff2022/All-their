@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { genusCount } from "./relativesTableHead";
 
-const HowMuchRelatives = ({ maxCount }) => {
-    // console.log("genusCount", genusCount);
+const HowMuchRelatives = ({ relatives }) => {
+    console.log("relatives", relatives);
+    const maxCount = relatives.length;
     const howMuchRelatives = (maxCount) => {
         if (maxCount === 0) return " У Вас не заведено ни одного родича!";
         if (maxCount > 0) return `У Вас ${maxCount} родичей!`;
@@ -19,7 +19,7 @@ const HowMuchRelatives = ({ maxCount }) => {
                     >
                         {howMuchRelatives(maxCount)}
                     </span>
-                    { }
+                    {/* { } */}
                 </h3>
             </div>
         </>
@@ -27,6 +27,7 @@ const HowMuchRelatives = ({ maxCount }) => {
 };
 
 HowMuchRelatives.propTypes = {
-    maxCount: PropTypes.number
+    maxCount: PropTypes.number,
+    relatives: PropTypes.array
 };
 export default HowMuchRelatives;
