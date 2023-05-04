@@ -1,7 +1,7 @@
-import React from 'react';
+import PropTypes from "prop-types";
+import React from "react";
 
 const Profession = ({ color, _id, name }) => {
-
     return (
         <span
             className={"badge m-1 bg-" + color}
@@ -10,6 +10,10 @@ const Profession = ({ color, _id, name }) => {
             {name}
         </span>
     );
-}
-
+};
+Profession.propTypes = {
+    color: PropTypes.string,
+    name: PropTypes.string,
+    _id: PropTypes.string
+};
 export default Profession;
