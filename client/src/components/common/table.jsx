@@ -6,7 +6,7 @@ import RelativesTableBody from "./relativesTableBody";
 const Table = ({ onSort, selectedSort, columns, data, children }) => {
     return (
         <div className="main-table-container">
-            <table className="table table-success table-striped m-2">
+            <table className="table m-2">
                 {children || (
                     <>
                         <RelativesTableHead
