@@ -11,7 +11,7 @@ module.exports = {
     },
     plugins: ["react"],
     rules: {
-        "indent": ["error", 4], // Отступ количество пробелов
+        "indent": ["error", 4, { "MemberExpression": 1 }], // Отступ количество пробелов
         "semi": [2, "always"], // Точка с запятой в конце строки
         // "space-before-function-paren": ["error", "newer"],
         // "space-before-function-paren": ["error", {
@@ -21,6 +21,7 @@ module.exports = {
         // }],
         "multiline-ternary": ["off"],
         // Использование двойных кавычек
-        "quotes": ["error", "double", { "allowTemplateLiterals": true }]
+        "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+        // "padded-blocks": ["error", "newer"]
     }
 };

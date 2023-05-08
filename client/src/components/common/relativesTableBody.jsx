@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
 
-const NewTableBody = ({ data, columns }) => {
+const RelativesTableBody = ({ data, columns }) => {
     const renderContent = (item, column) => {
         if (columns[column].component) {
             const component = columns[column].component;
@@ -27,8 +27,8 @@ const NewTableBody = ({ data, columns }) => {
         </tbody>
     );
 };
-NewTableBody.propTypes = {
+RelativesTableBody.propTypes = {
     data: PropTypes.array,
     columns: PropTypes.object
 };
-export default NewTableBody;
+export default RelativesTableBody;

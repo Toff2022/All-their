@@ -71,8 +71,11 @@ const RelativesMainTable = ({ relatives, genus, professions, onHandleDelete, ...
                     className="btn btn-danger"
                     onClick={() => onHandleDelete(genus._id)}
                 >
-                    Удалить
-                </button>)
+                    <span >
+                        Del <i className="bi bi-clipboard2-x-fill"></i>
+                    </span>
+                </button>
+            )
         }
     };
     return (

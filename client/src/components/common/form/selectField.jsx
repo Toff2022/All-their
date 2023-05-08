@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-//options - объект с профессиями
+// options - объект с профессиями
 const SelectField = ({
     label,
     value,
@@ -17,10 +17,10 @@ const SelectField = ({
     const optionsArray =
         !Array.isArray(options) && typeof options === "object"
             ? Object.keys(options).map((optionName) => ({
-                  name: options[optionName].name,
-                  value: options[optionName]._id,
-                  key: options[optionName]._id
-              }))
+                name: options[optionName].name,
+                value: options[optionName]._id,
+                key: options[optionName]._id
+            }))
             : options;
 
     return (

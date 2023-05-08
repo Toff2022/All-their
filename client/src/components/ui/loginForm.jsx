@@ -50,7 +50,8 @@ const LoginForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const isValid = validate();
-        if (!isValid) return;
+        // непонятные изменения для eslint
+        if (!isValid) { return; };
         // console.log(data);
     };
     return (

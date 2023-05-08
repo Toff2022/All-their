@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const BreadCrumbs = ({ page, onGoMain }) => {
-    const isMainPage = page.id === "main"
-    const mainClasses = "breadcrumb-item " + (isMainPage ? "  active" : "")
+    const isMainPage = page.id === "main";
+    const mainClasses = "breadcrumb-item " + (isMainPage ? "  active" : "");
 
     return (
         <nav>
@@ -20,7 +21,10 @@ const BreadCrumbs = ({ page, onGoMain }) => {
                 )}
             </ol>
         </nav>
-    )
-}
-
+    );
+};
+BreadCrumbs.propTypes = {
+    onGoMain: PropTypes.func,
+    page: PropTypes.string
+};
 export default BreadCrumbs;

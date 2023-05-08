@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const HelloContent = () => {
     return (
@@ -20,7 +20,7 @@ const HelloContent = () => {
                 </ul>
             </div>
         </div>
-    )
+    );
 };
 
 export default HelloContent;

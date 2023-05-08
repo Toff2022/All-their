@@ -9,6 +9,20 @@ const RelativesTableHead = ({ onSort, selectedSort, columns }) => {
             onSort({ path: item, order: "asc" });
         };
     };
+    const renderSortArrow = (selectedSort, currentPath) => {
+        console.log("current", currentPath);
+
+        if (selectedSort.path === currentPath) {
+            if (selectedSort.order === "asc") {
+                return <i className="bi bi-caret-down-fill"></i>;
+            } else {
+                return <i className="bi bi-caret-up-fill"></i>;
+            }
+        }
+        return <i className="bi bi-check-circle-fill"></i>;
+    };
+    console.log("path", selectedSort.path);
+    console.log("order", selectedSort.order);
     return (
         <thead>
             <tr>
@@ -23,6 +37,7 @@ const RelativesTableHead = ({ onSort, selectedSort, columns }) => {
                         scope="col"
                     >
                         {columns[column].name}
+                        {renderSortArrow(selectedSort, columns[column].path)}
                     </th>
                 ))}
             </tr>

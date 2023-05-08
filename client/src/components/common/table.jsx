@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import RelativesTableHead from "./relativesTableHead";
-import NewTableBody from "./newTableBody";
+import RelativesTableBody from "./relativesTableBody";
 
 const Table = ({ onSort, selectedSort, columns, data, children }) => {
     return (
@@ -14,7 +14,7 @@ const Table = ({ onSort, selectedSort, columns, data, children }) => {
                             selectedSort={selectedSort}
                             columns={columns}
                         />
-                        <NewTableBody {...{ columns, data }} />
+                        <RelativesTableBody {...{ columns, data }} />
                     </>
                 )}
             </table>
