@@ -12,7 +12,6 @@ const NavBar = () => {
         { id: "login", text: "Логин", to: "/loginPage", active: false }
     ]);
     const currentActivePage = menuItems.find((item) => item.active); //  возвращает эл-т, у к-го active=true
-    // console.log("currentActivePage", currentActivePage);
     const handleItemClick = (id) => {
         const newMenuItems = menuItems.map((item) => ({ // по клику пересоздаём массив
             ...item,

@@ -25,6 +25,6 @@ const BreadCrumbs = ({ page, onGoMain }) => {
 };
 BreadCrumbs.propTypes = {
     onGoMain: PropTypes.func,
-    page: PropTypes.string
+    page: PropTypes.object
 };
 export default BreadCrumbs;

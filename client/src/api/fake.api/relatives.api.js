@@ -186,8 +186,14 @@ const fetchAll = () =>
         }, 2000);
     });
 
+const getById = (id) => new Promise((resolve) => {
+    window.setTimeout(function () {
+        resolve(relatives.find((relative) => relative._id === id));
+    });
+});
 export default {
-    fetchAll
+    fetchAll,
+    getById
 };
 
 // export function fetchAll () {

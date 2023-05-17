@@ -21,7 +21,7 @@ module.exports = {
         // }],
         "multiline-ternary": ["off"],
         // Использование двойных кавычек
-        "quotes": ["error", "double", { "allowTemplateLiterals": true }],
-        "padded-blocks": ["error", "newer"]
+        "quotes": ["error", "double", { "allowTemplateLiterals": true }]
+        // "padded-blocks": ["error", "newer"]
     }
 };
