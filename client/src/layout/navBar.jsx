@@ -8,7 +8,7 @@ const NavBar = () => {
         { id: "main", text: "Главная", to: "/", active: true }, // добавляем пункт active
         { id: "blog", text: "Блог", to: "/blogPage", active: false },
         { id: "photoAlbum", text: "Фотоальбом", to: "/photoAlbum", active: false },
-        { id: "familyTree", text: "Семейное Древо", to: "/familyTree", active: false },
+        { id: "relativesPage", text: "Семейное Древо", to: "/RelativesPage", active: false },
         { id: "login", text: "Логин", to: "/loginPage", active: false }
     ]);
     const currentActivePage = menuItems.find((item) => item.active); //  возвращает эл-т, у к-го active=true

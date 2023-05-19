@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import API from "../api";
-import HowMuchRelatives from "../components/common/howMuchRelatives";
-import RelativesMainTable from "../components/common/table/relativesMainTable";
+import API from "../../api";
+import HowMuchRelatives from "./howMuchRelatives";
+import RelativesMainTable from "./table/relativesMainTable";
 
-const FamilyTree = () => {
+const RelativesListPage = () => {
     // const relativesURL = "http://localhost:8080/api/relatives"
     const [relatives, setRelatives] = useState();
     const [genus, setGenus] = useState();
@@ -27,7 +27,7 @@ const FamilyTree = () => {
     };
 
     return (
-        <div className="familyTree-container">
+        <div className="relativesPage-container">
             {relatives && (
                 <>
                     <HowMuchRelatives relatives={relatives} />
@@ -43,10 +43,10 @@ const FamilyTree = () => {
         </div>
     );
 };
-FamilyTree.propTypes = {
+RelativesListPage.propTypes = {
     relatives: PropTypes.array,
     genus: PropTypes.object,
     professions: PropTypes.object,
     onHandleDelete: PropTypes.func
 };
-export default FamilyTree;
+export default RelativesListPage;

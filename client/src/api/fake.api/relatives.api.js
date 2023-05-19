@@ -171,7 +171,7 @@ export const relatives = [
         age: 0,
         alive: "Нет",
         genus: [genus.Akindinovy],
-        adress: { city: "Novokubansk", street: "-" },
+        adress: { city: "Novokubansk", street: "Западная" },
         sex: "муж",
         birthDay: "28.05.1950",
         dethDay: "16.06.2011",
@@ -189,7 +189,7 @@ const fetchAll = () =>
 const getById = (id) => new Promise((resolve) => {
     window.setTimeout(function () {
         resolve(relatives.find((relative) => relative._id === id));
-    });
+    }, 1000);
 });
 export default {
     fetchAll,

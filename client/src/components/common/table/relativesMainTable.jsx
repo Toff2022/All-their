@@ -7,6 +7,7 @@ import Table from "./table";
 // import RelativesTableFooter from "./relativesTableFooter";
 import _ from "lodash";
 import GenusList from "./genusList";
+import { Link } from "react-router-dom";
 
 const RelativesMainTable = ({ relatives, genus, professions, onHandleDelete, ...rest }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -47,7 +48,13 @@ const RelativesMainTable = ({ relatives, genus, professions, onHandleDelete, ...
     const maxCount = Object.keys(relatives).length;
 
     const columns = {
-        name: { path: "lastName", name: "ФИО" },
+        name: {
+            path: "lastName",
+            name: "ФИО",
+            component: (relativ) => (
+                <Link to={`/relativesPage/${relativ._id}`}>{relativ.lastName} {relativ.firstName} {relativ.patronymic}</Link>
+            )
+        },
         profession: {
             path: "profession.name",
             name: "Профессия"

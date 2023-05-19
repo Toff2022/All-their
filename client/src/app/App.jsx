@@ -3,9 +3,10 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "../layout/navBar";
 import MainPage from "../layout/mainPage";
 import LoginPage from "../layout/loginPage";
-import FamilyTree from "../layout/familyTree";
 import BlogPage from "../layout/blogPage";
 import PhotoAlbum from "../layout/photoAlbum";
+// import { relatives } from "../api/fake.api/relatives.api";
+import RelativesPage from "../layout/relativesPage";
 // import UserPage from "../components/common/userPage";
 
 function App () {
@@ -15,7 +16,7 @@ function App () {
             <Switch>
                 <Route path="/" exact component={MainPage} />
                 <Route path="/blogPage" component={BlogPage} />
-                <Route path="/familyTree/:relativId?" component={FamilyTree} />
+                <Route path="/RelativesPage/:relativId?" component={RelativesPage} />
                 <Route path="/photoAlbum" component={PhotoAlbum} />
                 <Route path="/loginPage/:type?" component={LoginPage} />
                 <Redirect to="/" />
