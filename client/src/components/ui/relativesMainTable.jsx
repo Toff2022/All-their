@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import GroupList from "./groupList";
-import Pagination from "../pagination";
-import { paginate } from "../../../utils/paginate";
-import Table from "./table";
-// import RelativesTableFooter from "./relativesTableFooter";
+import GroupList from "../common/groupList";
+import Pagination from "../common/pagination";
+import Table from "../common/table";
+import { paginate } from "../../utils/paginate";
 import _ from "lodash";
-import GenusList from "./genusList";
+import Genus from "../common/table/genus";
 import { Link } from "react-router-dom";
 
 const RelativesMainTable = ({ relatives, genus, professions, onHandleDelete, ...rest }) => {
@@ -52,7 +51,9 @@ const RelativesMainTable = ({ relatives, genus, professions, onHandleDelete, ...
             path: "lastName",
             name: "ФИО",
             component: (relativ) => (
-                <Link to={`/relativesPage/${relativ._id}`}>{relativ.lastName} {relativ.firstName} {relativ.patronymic}</Link>
+                <Link to={`/relativesPage/${relativ._id}`}>
+                    {relativ.lastName} {relativ.firstName} {relativ.patronymic}
+                </Link>
             )
         },
         profession: {
@@ -63,7 +64,7 @@ const RelativesMainTable = ({ relatives, genus, professions, onHandleDelete, ...
         alive: { path: "alive", name: "Жив Ныне" },
         genus: {
             component: (relative) => (
-                <GenusList genus={relative.genus} />
+                <Genus genus={relative.genus} />
             ),
             name: "РОД"
         },

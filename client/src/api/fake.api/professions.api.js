@@ -11,7 +11,8 @@ export const professionsObject = {
     military: { _id: "67rdca3eeb7f6fgeed471834", name: "Военный", color: "primary" },
     driver: { _id: "67rdca3eeb7f6fgeed471835", name: "Водитель", color: "primary" },
     shoemaker: { _id: "67rdca3eeb7f6fgeed471836", name: "Сапожник", color: "secondary" },
-    kolkhoz: { _id: "67rdca3eeb7f6fgeed471831", name: "Сельхоз Работник", color: "secondary" }
+    kolkhoz: { _id: "67rdca3eeb7f6fgeed471831", name: "Сельхоз Работник", color: "secondary" },
+    directorSinema: { _id: "67rdca3eeb7f6fgeed471837", name: "Директор сети кинотеатров", color: "success" }
 };
 export const professions = [
     { _id: "67rdca3eeb7f6fgeed471818", name: "Доктор", color: "primary" },
@@ -26,7 +27,8 @@ export const professions = [
     { _id: "67rdca3eeb7f6fgeed471834", name: "Военный", color: "primary" },
     { _id: "67rdca3eeb7f6fgeed471835", name: "Водитель", color: "primary" },
     { _id: "67rdca3eeb7f6fgeed471836", name: "Сапожник", color: "secondary" },
-    { _id: "67rdca3eeb7f6fgeed471831", name: "Сельхоз Работник", color: "secondary" }
+    { _id: "67rdca3eeb7f6fgeed471831", name: "Сельхоз Работник", color: "secondary" },
+    { _id: "67rdca3eeb7f6fgeed471837", name: "Директор сети кинотеатров", color: "success" }
 ];
 const fetchAll = () =>
     new Promise((resolve) => {

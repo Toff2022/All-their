@@ -8,7 +8,8 @@ const SelectField = ({
     onChange,
     defaultOption,
     options,
-    error
+    error,
+    name
 }) => {
     const getInputClass = () => {
         return "form-select" + (error ? " is-invalid" : "");
@@ -55,6 +56,7 @@ SelectField.propTypes = {
     error: PropTypes.string,
     options: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     value: PropTypes.string,
+    name: PropTypes.string,
     onChange: PropTypes.func
 };
 export default SelectField;

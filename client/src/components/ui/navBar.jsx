@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import NavLink from "../components/ui/navLink";
-import BreadCrumbs from "../components/ui/breadCrumbs";
-import HelloContent from "../components/common/helloContent";
+import NavLink from "./navLink";
+import BreadCrumbs from "./breadCrumbs";
+import HelloContent from "../common/helloContent";
 
 const NavBar = () => {
     const [menuItems, setMenuItems] = useState([

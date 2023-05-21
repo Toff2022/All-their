@@ -167,7 +167,7 @@ export const relatives = [
         lastName: "Акиндинов",
         firstName: "Евгений",
         patronymic: "Константинович",
-        profession: professions.electricalEngineer,
+        profession: professions.directorSinema,
         age: 0,
         alive: "Нет",
         genus: [genus.Akindinovy],

@@ -1,13 +1,11 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import NavBar from "../layout/navBar";
+import NavBar from "../components/ui/navBar";
 import MainPage from "../layout/mainPage";
 import LoginPage from "../layout/loginPage";
 import BlogPage from "../layout/blogPage";
 import PhotoAlbum from "../layout/photoAlbum";
-// import { relatives } from "../api/fake.api/relatives.api";
 import RelativesPage from "../layout/relativesPage";
-// import UserPage from "../components/common/userPage";
 
 function App () {
     return (

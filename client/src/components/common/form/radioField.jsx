@@ -20,6 +20,7 @@ const RadioField = ({ options, name, onChange, value, label }) => {
                         onChange={onChange}
                     />
                     <label
+                        key={option.name + "_" + option.value}
                         className="form-check-label"
                         htmlFor={option.name + "_" + option.value}
                     >
