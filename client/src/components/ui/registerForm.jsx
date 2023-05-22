@@ -10,15 +10,24 @@ const RegisterForm = () => {
         email: "",
         password: "",
         profession: "",
-        sex: ""
+        sex: "male"
     });
     const [errors, setErrors] = useState({});
-    const [professions, setProfession] = useState();
+    const [professions, setProfession] = useState([]);
 
+    // useEffect(() => {
+    //     api.professions.fetchAll().then((data) => setProfession(data));
+    // }, []);
     useEffect(() => {
-        api.professions.fetchAll().then((data) => setProfession(data));
-    }, []);
-    const handleChange = ({ target }) => {
+        api.professions.fetchAll().then((data) => {
+            const professionList = Object.keys(data).map((professionName) => ({
+                label: data[professionName].name,
+                value: data[professionName]._id
+            }));
+            setProfession(professionList);
+        });
+    });
+    const handleChange = (target) => {
         setData((prevState) => ({
             ...prevState,
             [target.name]: target.value
@@ -93,6 +102,7 @@ const RegisterForm = () => {
             <SelectField
                 defaultOption="Choose..."
                 options={professions}
+                name="profession"
                 onChange={handleChange}
                 error={errors.profession}
                 value={data.profession}
