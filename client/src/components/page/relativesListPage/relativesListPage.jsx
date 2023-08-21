@@ -9,7 +9,7 @@ const RelativesListPage = () => {
     const [relatives, setRelatives] = useState();
     const [genus, setGenus] = useState();
     const [professions, setProfessions] = useState();
-
+    // const [searchQuery, setSearchQuery] = useState();
     useEffect(() => {
         API.relatives.fetchAll()
             .then((data) => setRelatives(data));
@@ -21,7 +21,6 @@ const RelativesListPage = () => {
     useEffect(() => {
         API.professions.fetchAll().then((data) => setProfessions(data));
     }, []);
-
     const handleDelete = (relativeId) => {
         setRelatives(relatives.filter((relative) => relative._id !== relativeId));
     };
@@ -31,7 +30,6 @@ const RelativesListPage = () => {
                 {relatives && (
                     <>
                         <HowMuchRelatives relatives={relatives} />
-
                         <RelativesMainTable
                             genus={genus}
                             relatives={relatives}

@@ -1,22 +1,22 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "../components/ui/navBar";
-import MainPage from "../layout/mainPage";
-import LoginPage from "../layout/loginPage";
-import BlogPage from "../layout/blogPage";
+import Main from "../layout/main";
+import Login from "../layout/login";
+import Blog from "../layout/blog";
 import PhotoAlbum from "../layout/photoAlbum";
-import RelativesPage from "../layout/relativesPage";
+import Relatives from "../layout/relatives";
 
 function App () {
     return (
         <>
             <NavBar />
             <Switch>
-                <Route path="/" exact component={MainPage} />
-                <Route path="/blogPage" component={BlogPage} />
-                <Route path="/RelativesPage/:relativId?" component={RelativesPage} />
+                <Route path="/blog" component={Blog} />
+                <Route path="/relatives/:relativeId?/:edit?" component={Relatives} />
                 <Route path="/photoAlbum" component={PhotoAlbum} />
-                <Route path="/loginPage/:type?" component={LoginPage} />
+                <Route path="/login/:type?" component={Login} />
+                <Route path="/" exact component={Main} />
                 <Redirect to="/" />
             </Switch>
         </>

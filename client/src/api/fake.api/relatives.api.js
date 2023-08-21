@@ -1,3 +1,4 @@
+// relatives - many, relative - one
 import { professionsObject as professions } from "./professions.api";
 import { genus } from "./genus.api";
 export const relatives = [
@@ -179,23 +180,53 @@ export const relatives = [
     }
 ];
 
-const fetchAll = () =>
-    new Promise((resolve) => {
-        window.setTimeout(function () {
-            resolve(relatives);
-        }, 2000);
-    });
-
-const getById = (id) => new Promise((resolve) => {
-    window.setTimeout(function () {
-        resolve(relatives.find((relative) => relative._id === id));
-    }, 1000);
-});
-export default {
-    fetchAll,
-    getById
+if (!localStorage.getItem("relatives")) {
+    localStorage.setItem("relatives", JSON.stringify(relatives));
 };
 
+const fetchAll = () => new Promise((resolve) => {
+    window.setTimeout(function () {
+        resolve(JSON.parse(localStorage.getItem("relatives")));
+    }, 2000);
+});
+
+const update = (id, data) =>
+    new Promise((resolve) => {
+        const relatives = JSON.parse(localStorage.getItem("relatives"));
+        const relativeIndex = relatives.findIndex((relative) => relative._id === id);
+        relatives[relativeIndex] = { ...relatives[relativeIndex], ...data };
+        localStorage.setItem("relatives", JSON.stringify(relatives));
+        resolve(relatives[relativeIndex]);
+    });
+
+const getById = (id) =>
+// console.log("getById", id);
+    new Promise((resolve) => {
+        window.setTimeout(function () {
+            resolve(
+                JSON.parse(localStorage.getItem("relatives")).find(
+                    (relative) => relative._id === id
+                )
+            );
+        }, 1000);
+    });
+
+export default {
+    fetchAll,
+    update,
+    getById
+};
 // export function fetchAll () {
 //     return relatives;
 // };
+// const fetchAll = () =>
+//     new Promise((resolve) => {
+//         window.setTimeout(function () {
+//             resolve(relatives);
+//         }, 2000);
+//     });
+// const getById = (id) => new Promise((resolve) => {
+//     window.setTimeout(function () {
+//         resolve(relatives.find((relative) => relative._id === id));
+//     }, 1000);
+// });

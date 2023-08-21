@@ -50,9 +50,9 @@ const RelativesMainTable = ({ relatives, genus, professions, onHandleDelete, ...
         name: {
             path: "lastName",
             name: "ФИО",
-            component: (relativ) => (
-                <Link to={`/relativesPage/${relativ._id}`}>
-                    {relativ.lastName} {relativ.firstName} {relativ.patronymic}
+            component: (relative) => (
+                <Link to={`/relatives/${relative._id}`}>
+                    {relative.lastName} {relative.firstName} {relative.patronymic}
                 </Link>
             )
         },

@@ -13,7 +13,6 @@ const HelloContent = () => {
 
                 <a href="http://localhost:3000/relativesPage">Родовой Книги</a>.
 
-
             </div>
         </div>
     );

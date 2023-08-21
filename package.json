@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "react-select": "^5.7.4",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3"
+  }
+}

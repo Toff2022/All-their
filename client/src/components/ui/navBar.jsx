@@ -6,10 +6,10 @@ import HelloContent from "../common/helloContent";
 const NavBar = () => {
     const [menuItems, setMenuItems] = useState([
         { id: "main", text: "Главная", to: "/", active: true }, // добавляем пункт active
-        { id: "blog", text: "Блог", to: "/blogPage", active: false },
+        { id: "blog", text: "Блог", to: "/blog", active: false },
         { id: "photoAlbum", text: "Фотоальбом", to: "/photoAlbum", active: false },
-        { id: "relativesPage", text: "Семейное Древо", to: "/RelativesPage", active: false },
-        { id: "login", text: "Логин", to: "/loginPage", active: false }
+        { id: "relatives", text: "Семейное Древо", to: "/relatives", active: false },
+        { id: "login", text: "Логин", to: "/login", active: false }
     ]);
     const currentActivePage = menuItems.find((item) => item.active); //  возвращает эл-т, у к-го active=true
     const handleItemClick = (id) => {
