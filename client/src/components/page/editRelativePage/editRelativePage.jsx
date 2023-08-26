@@ -4,7 +4,7 @@ import TextField from "../../common/form/textField";
 import SelectField from "../../common/form/selectField";
 import RadioField from "../../common/form/radioField";
 import API from "../../../api";
-// import { professions } from "../../../api/fake.api/professions.api";
+import { validator } from "../../../utils/validator";
 
 const EditRelativePage = () => {
     const { relativeId } = useParams();
@@ -20,6 +20,7 @@ const EditRelativePage = () => {
     });
     const [professions, setProfessions] = useState([]);
     const [genus, setGenus] = useState([]);
+    const [errors, setErrors] = useState({});
 
     const getProfessionById = (id) => {
         for (const prof of professions) {
@@ -45,14 +46,15 @@ const EditRelativePage = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const isValid = validate();
-        // if (!isValid) return;
+        const isValid = validate();
+        if (!isValid) return;
         const { profession, genus } = data;
         API.relatives.update(relativeId, {
             ...data,
             profession: getProfessionById(profession),
             genus: getGenus(genus)
-        });
+        })
+            .then((data) => history.push(`/relatives/${data._id}`));
     };
     const transformData = (data) => {
         return data.map((gen) => ({ label: gen.name, value: gen._id }));
@@ -75,43 +77,102 @@ const EditRelativePage = () => {
             }));
             setGenus(genusList);
         });
-        API.professions.fetchAll().then((data) => setProfessions(data));
+        API.professions.fetchAll().then((data) => {
+            const professionList = Object.keys(data).map((professionName) => ({
+                label: data[professionName].name,
+                value: data[professionName]._id
+            }));
+            setProfessions(professionList);
+        });
     }, []);
     useEffect(() => {
         if (data._id) setIsLoading(false);
     }, [data]);
 
-    console.log("genus", genus);
+    const validatorConfig = {
+        firstName: {
+            isRequired: {
+                message: "Введите ваше Имя"
+            }
+        },
+        lasttName: {
+            isRequired: {
+                message: "Введите вашу Фамилию"
+            }
+        },
+        patronymic: {
+            isRequired: {
+                message: "Введите ваше Отчество"
+            }
+        },
+        city: {
+            isRequired: {
+                message: "Введите название города"
+            }
+        },
+        street: {
+            isRequired: {
+                message: "Введите название улицы"
+            }
+        }
+    };
+    useEffect(() => {
+        validate();
+    }, [data]);
+    const handleChange = (target) => {
+        setData((prevState) => ({
+            ...prevState,
+            [target.name]: target.value
+        }));
+    };
+    const validate = () => {
+        const errors = validator(data, validatorConfig);
+        setErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+    const isValid = Object.keys(errors).length === 0;
     console.log("professions", professions);
-    console.log("data", data.profession);
-
     return (
-        <div className="container mt-5">
+        <div className="container mt-1">
             <div className="row">
-                <div className="col-md-6 offset-md-3 shadow p-4">
+                <div className="col-md-6 offset-md-3 shadow p-2">
                     <h1> Форма редактирования пользователя </h1>
-                    {!isLoading && relativeId ? (
+                    {!isLoading && Object.keys(professions).length > 0 ? (
                         <form onSubmit={handleSubmit}>
                             <TextField
                                 label="Имя"
                                 name="firstName"
                                 value={data.firstName}
-                                // onChange={handleChange}
-                                // error={errors.name}
+                                onChange={handleChange}
+                                error={errors.name}
                             />
                             <TextField
                                 label="Фамилия"
                                 name="lastName"
                                 value={data.lastName}
-                                // onChange={handleChange}
-                                // error={errors.name}
+                                onChange={handleChange}
+                                error={errors.name}
                             />
                             <TextField
                                 label="Отчество"
                                 name="patronymic"
                                 value={data.patronymic}
-                                // onChange={handleChange}
-                                // error={errors.name}
+                                onChange={handleChange}
+                                error={errors.name}
+                            />
+                            <TextField
+                                label="Адрес, город"
+                                name="City"
+                                value={data.adress.city}
+                                onChange={handleChange}
+                                error={errors.name}
+                            />
+                            <TextField
+                                label="Адрес, улица"
+                                name="Adress street"
+                                value={data.adress.street}
+                                onChange={handleChange}
+                                error={errors.name}
                             />
                             <RadioField
                                 options={[
@@ -121,23 +182,23 @@ const EditRelativePage = () => {
                                 ]}
                                 value={data.sex}
                                 name="sex"
-                                label="Выберите пол"
-                                // onChange={handleChange}
+                                label="Выберите пол "
+                                onChange={handleChange}
                             />
                             <SelectField
                                 defaultOption="Choose..."
                                 label="Выбери свою профессию"
                                 name="profession"
                                 options={ professions }
-                                // onChange={handleChange}
+                                onChange={handleChange}
                                 value={data.profession}
-                                // error={errors.professions}
+                                error={errors.professions}
                             />
                             <button
                                 type="submit"
-                                // disabled={!isValid}
+                                disabled={!isValid}
                                 className="btn btn-primary w-100 mx-auto">
-                                    Edit/Изменить
+                                    Edit / Изменить
                             </button>
                         </form>
                     ) : (
