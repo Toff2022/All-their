@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import TextField from "../../common/form/textField";
 import SelectField from "../../common/form/selectField";
 import RadioField from "../../common/form/radioField";
@@ -8,7 +8,7 @@ import { validator } from "../../../utils/validator";
 
 const EditRelativePage = () => {
     const { relativeId } = useParams();
-    // const history = useHistory();
+    const history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState({
         firstName: "",
@@ -66,7 +66,7 @@ const EditRelativePage = () => {
                 ...prevState,
                 ...data,
                 genus: transformData(genus),
-                profession: profession.name
+                profession: profession._id
             }))
         );
         API.genus.fetchAll().then((data) => {
@@ -120,6 +120,8 @@ const EditRelativePage = () => {
         validate();
     }, [data]);
     const handleChange = (target) => {
+        console.log("target", target);
+
         setData((prevState) => ({
             ...prevState,
             [target.name]: target.value
@@ -131,7 +133,9 @@ const EditRelativePage = () => {
         return Object.keys(errors).length === 0;
     };
     const isValid = Object.keys(errors).length === 0;
-    console.log("professions", professions);
+    // console.log("data", data);
+    // console.log("errors", errors);
+
     return (
         <div className="container mt-1">
             <div className="row">
@@ -151,28 +155,28 @@ const EditRelativePage = () => {
                                 name="lastName"
                                 value={data.lastName}
                                 onChange={handleChange}
-                                error={errors.name}
+                                error={errors.lastName}
                             />
                             <TextField
                                 label="Отчество"
                                 name="patronymic"
                                 value={data.patronymic}
                                 onChange={handleChange}
-                                error={errors.name}
+                                error={errors.patronymic}
                             />
                             <TextField
                                 label="Адрес, город"
                                 name="City"
                                 value={data.adress.city}
                                 onChange={handleChange}
-                                error={errors.name}
+                                error={errors.adress}
                             />
                             <TextField
                                 label="Адрес, улица"
                                 name="Adress street"
                                 value={data.adress.street}
                                 onChange={handleChange}
-                                error={errors.name}
+                                error={errors.adress}
                             />
                             <RadioField
                                 options={[

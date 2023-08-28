@@ -10,7 +10,7 @@ const RelativePage = ({ relativeId }) => {
     const history = useHistory();
     useEffect(() => {
         API.relatives.getById(relativeId).then(data => setRelative(data));
-    });
+    }, []);
     const handleClick = () => {
         history.push("/relatives");
     };

@@ -200,7 +200,6 @@ const update = (id, data) =>
     });
 
 const getById = (id) =>
-// console.log("getById", id);
     new Promise((resolve) => {
         window.setTimeout(function () {
             resolve(
