@@ -5,6 +5,7 @@ import SelectField from "../../common/form/selectField";
 import RadioField from "../../common/form/radioField";
 import API from "../../../api";
 import { validator } from "../../../utils/validator";
+// import { relatives } from "../../../api/fake.api/relatives.api";
 
 const EditRelativePage = () => {
     const { relativeId } = useParams();
@@ -14,6 +15,7 @@ const EditRelativePage = () => {
         firstName: "",
         lastName: "",
         patronymic: "",
+        lastNameBeforeMarriage: "",
         profession: "",
         sex: "",
         genus: []
@@ -44,6 +46,7 @@ const EditRelativePage = () => {
         }
         return genusArray;
     };
+    console.log("genus", genus);
     const handleSubmit = (e) => {
         e.preventDefault();
         const isValid = validate();
@@ -69,6 +72,7 @@ const EditRelativePage = () => {
                 profession: profession._id
             }))
         );
+
         API.genus.fetchAll().then((data) => {
             const genusList = Object.keys(data).map((genusName) => ({
                 value: data[genusName]._id,
@@ -120,7 +124,7 @@ const EditRelativePage = () => {
         validate();
     }, [data]);
     const handleChange = (target) => {
-        console.log("target", target);
+        // console.log("target", target);
 
         setData((prevState) => ({
             ...prevState,
@@ -132,8 +136,9 @@ const EditRelativePage = () => {
         setErrors(errors);
         return Object.keys(errors).length === 0;
     };
+    const isLastNameBeforeMarriage = data.lastNameBeforeMarriage;
+
     const isValid = Object.keys(errors).length === 0;
-    // console.log("data", data);
     // console.log("errors", errors);
 
     return (
@@ -144,18 +149,18 @@ const EditRelativePage = () => {
                     {!isLoading && Object.keys(professions).length > 0 ? (
                         <form onSubmit={handleSubmit}>
                             <TextField
-                                label="Имя"
-                                name="firstName"
-                                value={data.firstName}
-                                onChange={handleChange}
-                                error={errors.name}
-                            />
-                            <TextField
                                 label="Фамилия"
                                 name="lastName"
                                 value={data.lastName}
                                 onChange={handleChange}
                                 error={errors.lastName}
+                            />
+                            <TextField
+                                label="Имя"
+                                name="firstName"
+                                value={data.firstName}
+                                onChange={handleChange}
+                                error={errors.name}
                             />
                             <TextField
                                 label="Отчество"
@@ -164,6 +169,14 @@ const EditRelativePage = () => {
                                 onChange={handleChange}
                                 error={errors.patronymic}
                             />
+                            {isLastNameBeforeMarriage && <TextField
+                                label="Девичья фамилия"
+                                name="lastNameBeforeMarriage"
+                                value={isLastNameBeforeMarriage}
+                                onChange={handleChange}
+                                error={errors.lastNameBeforeMarriage}
+                            />
+                            }
                             <TextField
                                 label="Адрес, город"
                                 name="City"
