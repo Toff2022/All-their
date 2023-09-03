@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import TextField from "../../common/form/textField";
+import MultiSelectField from "../../common/form/multiSelectField";
 import SelectField from "../../common/form/selectField";
 import RadioField from "../../common/form/radioField";
 import API from "../../../api";
 import { validator } from "../../../utils/validator";
-// import { relatives } from "../../../api/fake.api/relatives.api";
 
 const EditRelativePage = () => {
     const { relativeId } = useParams();
@@ -46,7 +46,7 @@ const EditRelativePage = () => {
         }
         return genusArray;
     };
-    console.log("genus", genus);
+    // console.log("genus", genus);
     const handleSubmit = (e) => {
         e.preventDefault();
         const isValid = validate();
@@ -139,7 +139,7 @@ const EditRelativePage = () => {
     const isLastNameBeforeMarriage = data.lastNameBeforeMarriage;
 
     const isValid = Object.keys(errors).length === 0;
-    // console.log("errors", errors);
+    // console.log("genus", data.genus);
 
     return (
         <div className="container mt-1">
@@ -179,15 +179,15 @@ const EditRelativePage = () => {
                             }
                             <TextField
                                 label="Адрес, город"
-                                name="City"
-                                value={data.adress.city}
+                                name="adressCity"
+                                value={data.adressCity}
                                 onChange={handleChange}
                                 error={errors.adress}
                             />
                             <TextField
                                 label="Адрес, улица"
-                                name="Adress street"
-                                value={data.adress.street}
+                                name="adressStreet"
+                                value={data.adressStreet}
                                 onChange={handleChange}
                                 error={errors.adress}
                             />
@@ -201,6 +201,13 @@ const EditRelativePage = () => {
                                 name="sex"
                                 label="Выберите пол "
                                 onChange={handleChange}
+                            />
+                            <MultiSelectField
+                                defaultValue={genus}
+                                options={genus}
+                                onChange={handleChange}
+                                name="genus"
+                                label="Принадлежность к Роду"
                             />
                             <SelectField
                                 defaultOption="Choose..."

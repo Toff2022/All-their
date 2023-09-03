@@ -28,7 +28,7 @@ const RelativePage = ({ relativeId }) => {
                 {relative.lastNameBeforeMarriage &&
                     <h3> Девичья фамилия: {relative.lastNameBeforeMarriage}</h3>
                 }
-                <h3> Адрес: {relative.adress.city} {relative.adress.street}</h3>
+                <h3> Адрес: {relative.adressCity} {relative.adressStreet}</h3>
                 <h3>Пол: {relative.sex}</h3>
                 <h3>День рождения: {relative.birthDay} | День смерти: {relative.dethDay}</h3>
                 <button className="btn btn-primary " onClick={handleClick}> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-90deg-left" viewBox="0 0 16 16">

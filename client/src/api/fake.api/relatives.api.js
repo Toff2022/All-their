@@ -12,7 +12,8 @@ export const relatives = [
         alive: "Да",
         genus: [genus.Peshekhonovy],
         birthDay: "03.10.1987",
-        adress: { city: "Novokubansk", street: "Moskovskaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Московская",
         sex: "муж",
         bookmark: false
     },
@@ -27,7 +28,8 @@ export const relatives = [
         lastNameBeforeMarriage: "Акиндинова",
         genus: [genus.Peshekhonovy, genus.Akindinovy],
         birthDay: "11.10.1983",
-        adress: { city: "Novokubansk", street: "Moskovskaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Московская",
         sex: "жен",
         bookmark: false
     },
@@ -42,7 +44,8 @@ export const relatives = [
         lastNameBeforeMarriage: "Пешехонова",
         genus: [genus.Peshekhonovy],
         birthDay: "29.06.2016",
-        adress: { city: "Novokubansk", street: "Moskovskaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Московская",
         sex: "жен",
         bookmark: false
     },
@@ -56,7 +59,8 @@ export const relatives = [
         alive: "Да",
         genus: [genus.Peshekhonovy],
         birthDay: "12.02.1953",
-        adress: { city: "Novokubansk", street: "Octyabrskaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Октябрьская",
         sex: "муж",
         bookmark: false
     },
@@ -71,7 +75,8 @@ export const relatives = [
         lastNameBeforeMarriage: "Кадочникова",
         genus: [genus.Peshekhonovy, genus.Kadochnikovy],
         birthDay: "25.10.1953",
-        adress: { city: "Novokubansk", street: "Octyabrskaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Октябрьская",
         sex: "жен",
         bookmark: false
     },
@@ -86,7 +91,8 @@ export const relatives = [
         lastNameBeforeMarriage: "Пешехонова",
         genus: [genus.Kolos, genus.Peshekhonovy],
         birthDay: "25.09.1976",
-        adress: { city: "Novokubansk", street: "Sportivnaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Октябрьская",
         sex: "жен",
         bookmark: false
     },
@@ -100,7 +106,8 @@ export const relatives = [
         alive: "Да",
         genus: [genus.Bondarevsky, genus.Peshekhonovy],
         birthDay: "25.09.2008",
-        adress: { city: "Novokubansk", street: "Sportivnaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Спортивная",
         sex: "муж",
         bookmark: false
     },
@@ -114,7 +121,8 @@ export const relatives = [
         alive: "Да",
         genus: [genus.Lipinsky],
         birthDay: "13.01.1983",
-        adress: { city: "Novokubansk", street: "Sportivnaya" },
+        adressCity: "Новокубанск",
+        adressStreet: "Спортивная",
         sex: "муж",
         bookmark: false
     }, {
@@ -127,7 +135,8 @@ export const relatives = [
         alive: "Нет",
         genus: [genus.Peshekhonovy],
         birthDay: "1906",
-        adress: { city: "Novokubansk", street: "-" },
+        adressCity: "Новокубанск",
+        adressStreet: "Октябрьская",
         sex: "муж",
         dethDay: "05.12.1955",
         bookmark: false
@@ -143,7 +152,8 @@ export const relatives = [
         lastNameBeforeMarriage: "Косынко",
         genus: [genus.Peshekhonovy, genus.Kosynko],
         birthDay: "10.09.1910",
-        adress: { city: "Novokubansk", street: "-" },
+        adressCity: "Новокубанск",
+        adressStreet: "Октяьрьская",
         sex: "жен",
         dethDay: "20.01.2000",
         bookmark: false
@@ -158,7 +168,8 @@ export const relatives = [
         alive: "Да",
         lastNameBeforeMarriage: "Григоренко",
         genus: [genus.Akindinovy],
-        adress: { city: "Новокубанск", street: "К.Маркса" },
+        adressCity: "Новокубанск",
+        adressStreet: "Карла Маркса",
         sex: "жен",
         birthDay: "25.09.1954",
         bookmark: false
@@ -172,7 +183,8 @@ export const relatives = [
         age: 0,
         alive: "Нет",
         genus: [genus.Akindinovy],
-        adress: { city: "Novokubansk", street: "Западная" },
+        adressCity: "Новокубанск",
+        adressStreet: "Западная",
         sex: "муж",
         birthDay: "28.05.1950",
         dethDay: "16.06.2011",

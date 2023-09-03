@@ -33,6 +33,11 @@ export const genus = {
         _id: "7",
         name: "Косынко",
         color: "warning"
+    },
+    Grigorenko: {
+        _id: "8",
+        name: "Григоренко",
+        color: "info"
     }
 };
 

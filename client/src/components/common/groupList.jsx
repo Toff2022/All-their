@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const GroupList = ({ items, valueProperty, contentProperty, colorProperty, onItemSelect, selectedItem }) => {
     if (!Array.isArray(items)) {
         return (
-            <div className='list-group-container mb-3 ml-2'>
+            <div className='list-group-container mb-3'>
                 <ul className="list-group list-group-horizontal">
                     {Object.keys(items).map(item =>
                         <li
